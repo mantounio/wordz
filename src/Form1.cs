@@ -11,8 +11,14 @@ public partial class Form1 : Form
     int COORX;
     int COORY;
     bool MOV_WIND_LOCATION;
-    
-    
+
+
+    // helpers
+    private void change_btn_picture(Control control,Image img) => ((PictureBox)control).Image = img;
+
+
+
+    // form events
     public Form1()
     {
         InitializeComponent();
@@ -36,4 +42,9 @@ public partial class Form1 : Form
         COORX = e.X;
         COORY = e.Y;
     }
+
+    private void btn_close_DragEnter(object sender, DragEventArgs e) => change_btn_picture(btn_close, Properties.Resources.hov_red_24);
+    
+
+
 }
