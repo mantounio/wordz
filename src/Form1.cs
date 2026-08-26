@@ -47,8 +47,8 @@ public partial class Form1 : Form
     private void btn_close_MouseLeave(object sender, EventArgs e) => change_picbox_btn_picture(btn_close, Properties.Resources.red_24);
     private void btn_minimize_MouseEnter(object sender, EventArgs e) => change_picbox_btn_picture(btn_minimize, Properties.Resources.hov_yellow_24);
     private void btn_minimize_MouseLeave(object sender, EventArgs e) => change_picbox_btn_picture(btn_minimize, Properties.Resources.yellow_24);
-
-    
+    private void btn_close_Click(object sender, EventArgs e) => Application.Exit();
+    private void btn_minimize_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
 
     
 }

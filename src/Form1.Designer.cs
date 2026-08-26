@@ -44,6 +44,7 @@
             btn_close.SizeMode = PictureBoxSizeMode.AutoSize;
             btn_close.TabIndex = 0;
             btn_close.TabStop = false;
+            btn_close.Click += btn_close_Click;
             btn_close.MouseEnter += btn_close_MouseEnter;
             btn_close.MouseLeave += btn_close_MouseLeave;
             // 
@@ -56,6 +57,7 @@
             btn_minimize.SizeMode = PictureBoxSizeMode.AutoSize;
             btn_minimize.TabIndex = 1;
             btn_minimize.TabStop = false;
+            btn_minimize.Click += btn_minimize_Click;
             btn_minimize.MouseEnter += btn_minimize_MouseEnter;
             btn_minimize.MouseLeave += btn_minimize_MouseLeave;
             // 
