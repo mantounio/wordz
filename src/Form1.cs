@@ -14,7 +14,7 @@ public partial class Form1 : Form
 
 
     // helpers
-    private void change_btn_picture(Control control,Image img) => ((PictureBox)control).Image = img;
+    private void change_picbox_btn_picture(Control control, Image img) => ((PictureBox)control).Image = img;
 
 
 
@@ -43,8 +43,12 @@ public partial class Form1 : Form
         COORY = e.Y;
     }
 
-    private void btn_close_DragEnter(object sender, DragEventArgs e) => change_btn_picture(btn_close, Properties.Resources.hov_red_24);
+    private void btn_close_MouseEnter(object sender, EventArgs e) => change_picbox_btn_picture(btn_close, Properties.Resources.hov_red_24);
+    private void btn_close_MouseLeave(object sender, EventArgs e) => change_picbox_btn_picture(btn_close, Properties.Resources.red_24);
+    private void btn_minimize_MouseEnter(object sender, EventArgs e) => change_picbox_btn_picture(btn_minimize, Properties.Resources.hov_yellow_24);
+    private void btn_minimize_MouseLeave(object sender, EventArgs e) => change_picbox_btn_picture(btn_minimize, Properties.Resources.yellow_24);
+
     
 
-
+    
 }
