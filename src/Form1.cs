@@ -1,4 +1,6 @@
 using System.Runtime.InteropServices;
+using wordz.src.Main_Page;
+
 
 namespace wordz.src;
 
@@ -27,20 +29,16 @@ public partial class Form1 : Form
 
     private void Form1_MouseMove(object sender, MouseEventArgs e)
     {
-        if (MOV_WIND_LOCATION)
-            SetDesktopLocation(MousePosition.X - COORX, MousePosition.Y - COORY);
     }
 
     private void Form1_MouseUp(object sender, MouseEventArgs e)
     {
-        MOV_WIND_LOCATION = false;
+     
     }
 
     private void Form1_MouseDown(object sender, MouseEventArgs e)
     {
-        MOV_WIND_LOCATION = true;
-        COORX = e.X;
-        COORY = e.Y;
+       
     }
 
     private void btn_close_MouseEnter(object sender, EventArgs e) => change_picbox_btn_picture(btn_close, Properties.Resources.hov_red_24);
@@ -50,5 +48,36 @@ public partial class Form1 : Form
     private void btn_close_Click(object sender, EventArgs e) => Application.Exit();
     private void btn_minimize_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
 
-    
+    private void Form1_Load(object sender, EventArgs e)
+    {
+        main_page main_page = new()
+        {
+            Dock = DockStyle.Fill,
+
+        };
+
+        main_page.SendToBack();
+        this.Controls.Add(main_page);
+
+
+    }
+
+    private void panel1_MouseDown(object sender, MouseEventArgs e)
+    {
+
+        MOV_WIND_LOCATION = true;
+        COORX = e.X;
+        COORY = e.Y;
+    }
+
+    private void panel1_MouseUp(object sender, MouseEventArgs e)
+    {
+        MOV_WIND_LOCATION = false;
+    }
+
+    private void panel1_MouseMove(object sender, MouseEventArgs e)
+    {
+        if (MOV_WIND_LOCATION)
+            SetDesktopLocation(MousePosition.X - COORX, MousePosition.Y - COORY);
+    }
 }

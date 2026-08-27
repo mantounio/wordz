@@ -30,6 +30,7 @@
         {
             btn_close = new PictureBox();
             btn_minimize = new PictureBox();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)btn_close).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_minimize).BeginInit();
             SuspendLayout();
@@ -61,17 +62,31 @@
             btn_minimize.MouseEnter += btn_minimize_MouseEnter;
             btn_minimize.MouseLeave += btn_minimize_MouseLeave;
             // 
+            // panel1
+            // 
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(962, 634);
+            panel1.TabIndex = 2;
+            panel1.MouseDown += panel1_MouseDown;
+            panel1.MouseMove += panel1_MouseMove;
+            panel1.MouseUp += panel1_MouseUp;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(962, 634);
             Controls.Add(btn_minimize);
             Controls.Add(btn_close);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += Form1_Load;
             MouseDown += Form1_MouseDown;
             MouseMove += Form1_MouseMove;
             MouseUp += Form1_MouseUp;
@@ -85,5 +100,6 @@
 
         private PictureBox btn_close;
         private PictureBox btn_minimize;
+        private Panel panel1;
     }
 }
