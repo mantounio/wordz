@@ -1,4 +1,14 @@
-﻿public static class Util 
+﻿
+
+public static class Util 
 {
-    public static Stack<UserControl> WINDPTR = new();
+    
+    private static Stack<UserControl> WINDPTR = new();
+
+    // methods
+    public static void Push_window(UserControl usercontrol) => WINDPTR.Push(usercontrol);
+    public static UserControl Get_window() => WINDPTR.Peek();
+    public static UserControl Page_BackWard() => WINDPTR.Pop();
+
+
 }
