@@ -45,7 +45,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Red;
+            BackColor = SystemColors.Control;
             Controls.Add(label1);
             Name = "main_page";
             Size = new Size(980, 681);

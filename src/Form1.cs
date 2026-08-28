@@ -14,31 +14,17 @@ public partial class Form1 : Form
     int COORY;
     bool MOV_WIND_LOCATION;
 
-
     // helpers
     private void change_picbox_btn_picture(Control control, Image img) => ((PictureBox)control).Image = img;
 
 
 
+
     // form events
     public Form1()
-    {
+    { 
         InitializeComponent();
         Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
-    }
-
-    private void Form1_MouseMove(object sender, MouseEventArgs e)
-    {
-    }
-
-    private void Form1_MouseUp(object sender, MouseEventArgs e)
-    {
-     
-    }
-
-    private void Form1_MouseDown(object sender, MouseEventArgs e)
-    {
-       
     }
 
     private void btn_close_MouseEnter(object sender, EventArgs e) => change_picbox_btn_picture(btn_close, Properties.Resources.hov_red_24);
@@ -53,26 +39,46 @@ public partial class Form1 : Form
         main_page main_page = new()
         {
             Dock = DockStyle.Fill,
-
+            Name = "main_page"
         };
 
         main_page.SendToBack();
-        this.Controls.Add(main_page);
+        pnl_windows_container.Controls.Add(main_page);
+
+        foreach(var USER_CONTROL in pnl_windows_container.Controls.OfType<UserControl>())
+        {
+            USER_CONTROL.MouseMove += USER_CONTROL_MouseMove;
+            USER_CONTROL.MouseUp += USER_CONTROL_MouseUp;
+            USER_CONTROL.MouseDown += USER_CONTROL_MouseDown;
+        }
 
 
     }
 
-    private void panel1_MouseDown(object sender, MouseEventArgs e)
+    private void USER_CONTROL_MouseDown(object? sender, MouseEventArgs e)
     {
-
         MOV_WIND_LOCATION = true;
         COORX = e.X;
         COORY = e.Y;
     }
 
-    private void panel1_MouseUp(object sender, MouseEventArgs e)
+    private void USER_CONTROL_MouseUp(object? sender, MouseEventArgs e)
     {
         MOV_WIND_LOCATION = false;
+    }
+
+    private void USER_CONTROL_MouseMove(object? sender, MouseEventArgs e)
+    {
+        if (MOV_WIND_LOCATION)
+            SetDesktopLocation(MousePosition.X - COORX, MousePosition.Y - COORY);
+    }
+
+    private void panel1_MouseUp(object sender, MouseEventArgs e) => MOV_WIND_LOCATION = false;
+    private void panel1_MouseDown(object sender, MouseEventArgs e)
+    {
+        MOV_WIND_LOCATION = true;
+        COORX = e.X;
+        COORY = e.Y;
     }
 
     private void panel1_MouseMove(object sender, MouseEventArgs e)
