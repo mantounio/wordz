@@ -51,8 +51,7 @@ public partial class Form1 : Form
             USER_CONTROL.MouseUp += USER_CONTROL_MouseUp;
             USER_CONTROL.MouseDown += USER_CONTROL_MouseDown;
         }
-
-
+        Util.Push_window(main_page);
     }
 
     private void USER_CONTROL_MouseDown(object? sender, MouseEventArgs e)

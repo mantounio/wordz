@@ -28,33 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
             SuspendLayout();
             // 
-            // label1
+            // button1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Roboto", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(363, 278);
-            label1.Name = "label1";
-            label1.Size = new Size(254, 34);
-            label1.TabIndex = 0;
-            label1.Text = "Main Window Page";
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(195, 103);
+            button1.Name = "button1";
+            button1.Size = new Size(226, 216);
+            button1.TabIndex = 1;
+            button1.Text = "Take a Quiz";
+            button1.TextAlign = ContentAlignment.BottomCenter;
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(554, 103);
+            button2.Name = "button2";
+            button2.Size = new Size(226, 216);
+            button2.TabIndex = 2;
+            button2.Text = "add a word";
+            button2.TextAlign = ContentAlignment.BottomCenter;
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Location = new Point(554, 360);
+            button3.Name = "button3";
+            button3.Size = new Size(226, 216);
+            button3.TabIndex = 4;
+            button3.Text = "add a word";
+            button3.TextAlign = ContentAlignment.BottomCenter;
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Location = new Point(195, 360);
+            button4.Name = "button4";
+            button4.Size = new Size(226, 216);
+            button4.TabIndex = 3;
+            button4.Text = "Take a Quiz";
+            button4.TextAlign = ContentAlignment.BottomCenter;
+            button4.UseVisualStyleBackColor = true;
             // 
             // main_page
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            Controls.Add(label1);
+            Controls.Add(button3);
+            Controls.Add(button4);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Name = "main_page";
             Size = new Size(980, 681);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
     }
 }
