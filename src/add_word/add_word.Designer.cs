@@ -1,6 +1,6 @@
 ﻿namespace wordz.src.add_word
 {
-    partial class add_word
+    partial class Add_word
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,10 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            label1 = new Label();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(309, 320);
+            label1.Name = "label1";
+            label1.Size = new Size(363, 41);
+            label1.TabIndex = 0;
+            label1.Text = "add a word window baby";
+            // 
+            // add_word
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Red;
+            Controls.Add(label1);
+            Name = "add_word";
+            Size = new Size(980, 681);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
     }
 }
