@@ -32,10 +32,12 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // button1
             // 
+            button1.BackColor = SystemColors.Control;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 15F);
             button1.Image = Properties.Resources.l_quiz_75px;
@@ -45,7 +47,7 @@
             button1.TabIndex = 1;
             button1.Text = "Take a Quiz";
             button1.TextAlign = ContentAlignment.BottomCenter;
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -64,6 +66,7 @@
             // 
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 15F);
+            button3.Image = Properties.Resources.l_settings_75px;
             button3.Location = new Point(554, 360);
             button3.Name = "button3";
             button3.Size = new Size(226, 216);
@@ -76,6 +79,7 @@
             // 
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI", 15F);
+            button4.Image = Properties.Resources.l_words_list_75px;
             button4.Location = new Point(195, 360);
             button4.Name = "button4";
             button4.Size = new Size(226, 216);
@@ -84,11 +88,21 @@
             button4.TextAlign = ContentAlignment.BottomCenter;
             button4.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(37, 34);
+            label1.Name = "label1";
+            label1.Size = new Size(69, 20);
+            label1.TabIndex = 5;
+            label1.Text = "&#128276;";
+            // 
             // main_page
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
+            Controls.Add(label1);
             Controls.Add(button3);
             Controls.Add(button4);
             Controls.Add(button2);
@@ -97,6 +111,7 @@
             Size = new Size(980, 681);
             Click += main_page_Click;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -105,5 +120,6 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private Label label1;
     }
 }

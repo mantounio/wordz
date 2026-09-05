@@ -133,6 +133,26 @@ namespace wordz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap l_settings_75px {
+            get {
+                object obj = ResourceManager.GetObject("l_settings_75px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap l_words_list_75px {
+            get {
+                object obj = ResourceManager.GetObject("l_words_list_75px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap red_24 {
             get {
                 object obj = ResourceManager.GetObject("red_24", resourceCulture);
