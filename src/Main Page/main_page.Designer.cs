@@ -37,6 +37,8 @@
             // button1
             // 
             button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 15F);
+            button1.Image = Properties.Resources.l_quiz_75px;
             button1.Location = new Point(195, 103);
             button1.Name = "button1";
             button1.Size = new Size(226, 216);
