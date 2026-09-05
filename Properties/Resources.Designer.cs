@@ -63,6 +63,16 @@ namespace wordz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap d_quiz_75px {
+            get {
+                object obj = ResourceManager.GetObject("d_quiz_75px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hov_red_24 {
             get {
                 object obj = ResourceManager.GetObject("hov_red_24", resourceCulture);
@@ -76,6 +86,16 @@ namespace wordz.Properties {
         internal static System.Drawing.Bitmap hov_yellow_24 {
             get {
                 object obj = ResourceManager.GetObject("hov_yellow_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap l_add_translation_75px {
+            get {
+                object obj = ResourceManager.GetObject("l_add_translation_75px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

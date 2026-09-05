@@ -50,33 +50,37 @@
             // button2
             // 
             button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 15F);
+            button2.Image = Properties.Resources.l_add_translation_75px;
             button2.Location = new Point(554, 103);
             button2.Name = "button2";
             button2.Size = new Size(226, 216);
             button2.TabIndex = 2;
-            button2.Text = "add a word";
+            button2.Text = "Add a Word";
             button2.TextAlign = ContentAlignment.BottomCenter;
             button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
             button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI", 15F);
             button3.Location = new Point(554, 360);
             button3.Name = "button3";
             button3.Size = new Size(226, 216);
             button3.TabIndex = 4;
-            button3.Text = "add a word";
+            button3.Text = "Settings";
             button3.TextAlign = ContentAlignment.BottomCenter;
             button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
             button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI", 15F);
             button4.Location = new Point(195, 360);
             button4.Name = "button4";
             button4.Size = new Size(226, 216);
             button4.TabIndex = 3;
-            button4.Text = "Take a Quiz";
+            button4.Text = "Words List";
             button4.TextAlign = ContentAlignment.BottomCenter;
             button4.UseVisualStyleBackColor = true;
             // 
@@ -91,6 +95,7 @@
             Controls.Add(button1);
             Name = "main_page";
             Size = new Size(980, 681);
+            Click += main_page_Click;
             ResumeLayout(false);
         }
 
