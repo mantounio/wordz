@@ -10,6 +10,7 @@ namespace wordz.src.Main_Page
 
         private void main_page_Click(object sender, EventArgs e)
         {
+           
         }
     }
 }
