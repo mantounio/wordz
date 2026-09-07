@@ -51,13 +51,15 @@ public partial class Form1 : Form
         COORX = e.X;
         COORY = e.Y;
         pnl_move_window.BackColor = Color.FromArgb(113, 121, 126); // click to change the color 
+        change_colors(Color.FromArgb(113, 121, 126), btn_close, btn_minimize);
         
     }
 
     private void pnl_mov_window_MouseUp(object sender, MouseEventArgs e) 
     {
         MOV_WIND_LOCATION = false; 
-        pnl_move_window.BackColor = Color.FromArgb(211, 211, 211); 
+        pnl_move_window.BackColor = Color.FromArgb(211, 211, 211);
+        change_colors(Color.FromArgb(211, 211, 211), btn_close, btn_minimize);
     }
 
     private void pnl_mov_window_MouseMove(object sender, MouseEventArgs e)
@@ -76,8 +78,9 @@ public partial class Form1 : Form
     {
         pnl_move_window.BackColor = Color.FromName("control");
         change_colors(Color.FromName("control"), btn_close, btn_minimize);
-
     }
 }
 
 // group color change in buttons fix the hovering button color to prevent repetitive code
+// consider : changing the color of clicking pnl_move_window
+// consider : chaning the if it is essential to have a hover color for mouse entering pnl_move_window or just to have a change of color when 'mouse downing' the pnl_move_window
