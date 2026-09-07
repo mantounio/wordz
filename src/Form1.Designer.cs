@@ -30,11 +30,11 @@
         {
             btn_close = new PictureBox();
             btn_minimize = new PictureBox();
-            pnl_windows_container = new Panel();
+            pnl_container = new Panel();
             pnl_mov_window = new Panel();
             ((System.ComponentModel.ISupportInitialize)btn_close).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_minimize).BeginInit();
-            pnl_windows_container.SuspendLayout();
+            pnl_container.SuspendLayout();
             SuspendLayout();
             // 
             // btn_close
@@ -65,15 +65,15 @@
             btn_minimize.MouseEnter += btn_minimize_MouseEnter;
             btn_minimize.MouseLeave += btn_minimize_MouseLeave;
             // 
-            // pnl_windows_container
+            // pnl_container
             // 
-            pnl_windows_container.BackColor = SystemColors.Control;
-            pnl_windows_container.Controls.Add(pnl_mov_window);
-            pnl_windows_container.Dock = DockStyle.Fill;
-            pnl_windows_container.Location = new Point(0, 0);
-            pnl_windows_container.Name = "pnl_windows_container";
-            pnl_windows_container.Size = new Size(962, 634);
-            pnl_windows_container.TabIndex = 2;
+            pnl_container.BackColor = SystemColors.Control;
+            pnl_container.Controls.Add(pnl_mov_window);
+            pnl_container.Dock = DockStyle.Fill;
+            pnl_container.Location = new Point(0, 0);
+            pnl_container.Name = "pnl_container";
+            pnl_container.Size = new Size(962, 634);
+            pnl_container.TabIndex = 2;
             // 
             // pnl_mov_window
             // 
@@ -94,7 +94,7 @@
             ClientSize = new Size(962, 634);
             Controls.Add(btn_minimize);
             Controls.Add(btn_close);
-            Controls.Add(pnl_windows_container);
+            Controls.Add(pnl_container);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -102,7 +102,7 @@
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)btn_close).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_minimize).EndInit();
-            pnl_windows_container.ResumeLayout(false);
+            pnl_container.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -111,7 +111,7 @@
 
         private PictureBox btn_close;
         private PictureBox btn_minimize;
-        public Panel pnl_windows_container;
+        public Panel pnl_container;
         private Panel pnl_mov_window;
     }
 }

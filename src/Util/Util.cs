@@ -1,10 +1,9 @@
-﻿using static Page_OPT;
-using System.Windows.Forms;
-using wordz.src.add_word;
-using System.Runtime.CompilerServices;
+﻿using wordz.src.Main_Page;
+using static Page_OPT;
 
 public enum Page_OPT
 {
+    MAINWINDOW,
     TAKEQUIZ,
     ADDWORD,
     WORDSLIST,
@@ -27,7 +26,7 @@ public static class Util
     /// </summary>
     /// <param name="op">page option</param>
     /// <param name="container">container indicates which control(form | usercontrol)will contain the page</param>
-    public static void CreatePage(Page_OPT op, Control container)
+    /*public static void CreatePage(Page_OPT op, Control container)
     {
         MessageBox.Show("shows the page");
         
@@ -59,8 +58,22 @@ public static class Util
 
 
         container.Controls.Add(page);
-    }
+    }*/
+    public static void CreatePage(Page_OPT option,Control container)
+    {
+        switch (option)
+        {
+            case MAINWINDOW:
+                main_page main_page = new()
+                {
+                    Dock = DockStyle.Fill,
+                    Name = "mainpage"
+                };
+                main_page.SendToBack();
+                container.Controls.Add(main_page);
+                break;
 
-    
+        }
+    }
 }
 

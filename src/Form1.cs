@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices;
 using wordz.src.Main_Page;
+using static Page_OPT;
 
 
 namespace wordz.src;
@@ -23,7 +24,7 @@ public partial class Form1 : Form
     {
         InitializeComponent();
         Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
-        Util.control_container = pnl_windows_container;
+        Util.control_container = pnl_container;
     }
 
     private void btn_close_MouseEnter(object sender, EventArgs e) => change_picbox_btn_picture(btn_close, Properties.Resources.hov_red_24);
@@ -35,15 +36,16 @@ public partial class Form1 : Form
 
     private void Form1_Load(object sender, EventArgs e)
     {
-        main_page main_page = new()
+        /*main_page main_page = new()
         {
             Dock = DockStyle.Fill,
-            Name = "main_page"
+            Name = "mainpage"
         };
         main_page.SendToBack();
-        pnl_windows_container.Controls.Add(main_page);
+        pnl_windows_container.Controls.Add(main_page);*/
+        Util.CreatePage(MAINWINDOW,pnl_container);
 
-        Util.Push_window(main_page);
+      
     }
 
     private void pnl_mov_window_MouseDown(object sender, MouseEventArgs e)
