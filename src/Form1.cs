@@ -17,7 +17,13 @@ public partial class Form1 : Form
 
     // helpers
     private void change_picbox_btn_picture(Control control, Image img) => ((PictureBox)control).Image = img;
-
+    private void change_colors(Color color, params Control[] controls)
+    {
+        foreach(var item in controls)
+        {
+            item.BackColor = color;
+        }
+    }
 
     // form events
     public Form1()
@@ -36,16 +42,7 @@ public partial class Form1 : Form
 
     private void Form1_Load(object sender, EventArgs e)
     {
-        /*main_page main_page = new()
-        {
-            Dock = DockStyle.Fill,
-            Name = "mainpage"
-        };
-        main_page.SendToBack();
-        pnl_windows_container.Controls.Add(main_page);*/
-        Util.CreatePage(MAINWINDOW,pnl_container);
-
-      
+        //Util.CreatePage(MAINWINDOW, pnl_container);
     }
 
     private void pnl_mov_window_MouseDown(object sender, MouseEventArgs e)
@@ -53,13 +50,34 @@ public partial class Form1 : Form
         MOV_WIND_LOCATION = true;
         COORX = e.X;
         COORY = e.Y;
+        pnl_move_window.BackColor = Color.FromArgb(113, 121, 126); // click to change the color 
+        
     }
 
-    private void pnl_mov_window_MouseUp(object sender, MouseEventArgs e) => MOV_WIND_LOCATION = false;
+    private void pnl_mov_window_MouseUp(object sender, MouseEventArgs e) 
+    {
+        MOV_WIND_LOCATION = false; 
+        pnl_move_window.BackColor = Color.FromArgb(211, 211, 211); 
+    }
 
     private void pnl_mov_window_MouseMove(object sender, MouseEventArgs e)
     {
         if (MOV_WIND_LOCATION)
             SetDesktopLocation(MousePosition.X - COORX, MousePosition.Y - COORY);
     }
+
+    private void pnl_mov_window_MouseEnter(object sender, EventArgs e)
+    {
+        pnl_move_window.BackColor = Color.FromArgb(211, 211, 211);
+        change_colors(Color.FromArgb(211, 211, 211), btn_close, btn_minimize);
+    }
+
+    private void pnl_mov_window_MouseLeave(object sender, EventArgs e)
+    {
+        pnl_move_window.BackColor = Color.FromName("control");
+        change_colors(Color.FromName("control"), btn_close, btn_minimize);
+
+    }
 }
+
+// group color change in buttons fix the hovering button color to prevent repetitive code

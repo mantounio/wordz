@@ -31,7 +31,7 @@
             btn_close = new PictureBox();
             btn_minimize = new PictureBox();
             pnl_container = new Panel();
-            pnl_mov_window = new Panel();
+            pnl_move_window = new Panel();
             ((System.ComponentModel.ISupportInitialize)btn_close).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_minimize).BeginInit();
             pnl_container.SuspendLayout();
@@ -41,7 +41,7 @@
             // 
             btn_close.BackColor = SystemColors.Control;
             btn_close.Image = Properties.Resources.red_24;
-            btn_close.Location = new Point(914, 25);
+            btn_close.Location = new Point(914, 24);
             btn_close.Name = "btn_close";
             btn_close.Size = new Size(24, 24);
             btn_close.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -55,7 +55,7 @@
             // 
             btn_minimize.BackColor = SystemColors.Control;
             btn_minimize.Image = Properties.Resources.yellow_24;
-            btn_minimize.Location = new Point(884, 25);
+            btn_minimize.Location = new Point(884, 24);
             btn_minimize.Name = "btn_minimize";
             btn_minimize.Size = new Size(24, 24);
             btn_minimize.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -68,23 +68,26 @@
             // pnl_container
             // 
             pnl_container.BackColor = SystemColors.Control;
-            pnl_container.Controls.Add(pnl_mov_window);
+            pnl_container.Controls.Add(pnl_move_window);
             pnl_container.Dock = DockStyle.Fill;
             pnl_container.Location = new Point(0, 0);
             pnl_container.Name = "pnl_container";
             pnl_container.Size = new Size(962, 634);
             pnl_container.TabIndex = 2;
             // 
-            // pnl_mov_window
+            // pnl_move_window
             // 
-            pnl_mov_window.Dock = DockStyle.Top;
-            pnl_mov_window.Location = new Point(0, 0);
-            pnl_mov_window.Name = "pnl_mov_window";
-            pnl_mov_window.Size = new Size(962, 49);
-            pnl_mov_window.TabIndex = 0;
-            pnl_mov_window.MouseDown += pnl_mov_window_MouseDown;
-            pnl_mov_window.MouseMove += pnl_mov_window_MouseMove;
-            pnl_mov_window.MouseUp += pnl_mov_window_MouseUp;
+            pnl_move_window.BackColor = SystemColors.Control;
+            pnl_move_window.Dock = DockStyle.Top;
+            pnl_move_window.Location = new Point(0, 0);
+            pnl_move_window.Name = "pnl_move_window";
+            pnl_move_window.Size = new Size(962, 49);
+            pnl_move_window.TabIndex = 0;
+            pnl_move_window.MouseDown += pnl_mov_window_MouseDown;
+            pnl_move_window.MouseEnter += pnl_mov_window_MouseEnter;
+            pnl_move_window.MouseLeave += pnl_mov_window_MouseLeave;
+            pnl_move_window.MouseMove += pnl_mov_window_MouseMove;
+            pnl_move_window.MouseUp += pnl_mov_window_MouseUp;
             // 
             // Form1
             // 
@@ -112,6 +115,6 @@
         private PictureBox btn_close;
         private PictureBox btn_minimize;
         public Panel pnl_container;
-        private Panel pnl_mov_window;
+        private Panel pnl_move_window;
     }
 }
