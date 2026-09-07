@@ -31,8 +31,10 @@
             btn_close = new PictureBox();
             btn_minimize = new PictureBox();
             pnl_windows_container = new Panel();
+            pnl_mov_window = new Panel();
             ((System.ComponentModel.ISupportInitialize)btn_close).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_minimize).BeginInit();
+            pnl_windows_container.SuspendLayout();
             SuspendLayout();
             // 
             // btn_close
@@ -66,14 +68,23 @@
             // pnl_windows_container
             // 
             pnl_windows_container.BackColor = SystemColors.Control;
+            pnl_windows_container.Controls.Add(pnl_mov_window);
             pnl_windows_container.Dock = DockStyle.Fill;
             pnl_windows_container.Location = new Point(0, 0);
             pnl_windows_container.Name = "pnl_windows_container";
             pnl_windows_container.Size = new Size(962, 634);
             pnl_windows_container.TabIndex = 2;
-            pnl_windows_container.MouseDown += panel1_MouseDown;
-            pnl_windows_container.MouseMove += panel1_MouseMove;
-            pnl_windows_container.MouseUp += panel1_MouseUp;
+            // 
+            // pnl_mov_window
+            // 
+            pnl_mov_window.Dock = DockStyle.Top;
+            pnl_mov_window.Location = new Point(0, 0);
+            pnl_mov_window.Name = "pnl_mov_window";
+            pnl_mov_window.Size = new Size(962, 49);
+            pnl_mov_window.TabIndex = 0;
+            pnl_mov_window.MouseDown += pnl_mov_window_MouseDown;
+            pnl_mov_window.MouseMove += pnl_mov_window_MouseMove;
+            pnl_mov_window.MouseUp += pnl_mov_window_MouseUp;
             // 
             // Form1
             // 
@@ -91,6 +102,7 @@
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)btn_close).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_minimize).EndInit();
+            pnl_windows_container.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -99,6 +111,7 @@
 
         private PictureBox btn_close;
         private PictureBox btn_minimize;
-        private Panel pnl_windows_container;
+        public Panel pnl_windows_container;
+        private Panel pnl_mov_window;
     }
 }

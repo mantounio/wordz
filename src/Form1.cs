@@ -18,13 +18,12 @@ public partial class Form1 : Form
     private void change_picbox_btn_picture(Control control, Image img) => ((PictureBox)control).Image = img;
 
 
-
-
     // form events
     public Form1()
-    { 
+    {
         InitializeComponent();
         Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
+        Util.control_container = pnl_windows_container;
     }
 
     private void btn_close_MouseEnter(object sender, EventArgs e) => change_picbox_btn_picture(btn_close, Properties.Resources.hov_red_24);
@@ -41,46 +40,22 @@ public partial class Form1 : Form
             Dock = DockStyle.Fill,
             Name = "main_page"
         };
-
         main_page.SendToBack();
         pnl_windows_container.Controls.Add(main_page);
 
-        foreach(var USER_CONTROL in pnl_windows_container.Controls.OfType<UserControl>())
-        {
-            USER_CONTROL.MouseMove += USER_CONTROL_MouseMove;
-            USER_CONTROL.MouseUp += USER_CONTROL_MouseUp;
-            USER_CONTROL.MouseDown += USER_CONTROL_MouseDown;
-        }
         Util.Push_window(main_page);
     }
 
-    private void USER_CONTROL_MouseDown(object? sender, MouseEventArgs e)
+    private void pnl_mov_window_MouseDown(object sender, MouseEventArgs e)
     {
         MOV_WIND_LOCATION = true;
         COORX = e.X;
         COORY = e.Y;
     }
 
-    private void USER_CONTROL_MouseUp(object? sender, MouseEventArgs e)
-    {
-        MOV_WIND_LOCATION = false;
-    }
+    private void pnl_mov_window_MouseUp(object sender, MouseEventArgs e) => MOV_WIND_LOCATION = false;
 
-    private void USER_CONTROL_MouseMove(object? sender, MouseEventArgs e)
-    {
-        if (MOV_WIND_LOCATION)
-            SetDesktopLocation(MousePosition.X - COORX, MousePosition.Y - COORY);
-    }
-
-    private void panel1_MouseUp(object sender, MouseEventArgs e) => MOV_WIND_LOCATION = false;
-    private void panel1_MouseDown(object sender, MouseEventArgs e)
-    {
-        MOV_WIND_LOCATION = true;
-        COORX = e.X;
-        COORY = e.Y;
-    }
-
-    private void panel1_MouseMove(object sender, MouseEventArgs e)
+    private void pnl_mov_window_MouseMove(object sender, MouseEventArgs e)
     {
         if (MOV_WIND_LOCATION)
             SetDesktopLocation(MousePosition.X - COORX, MousePosition.Y - COORY);

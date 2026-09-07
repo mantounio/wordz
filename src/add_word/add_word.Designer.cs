@@ -41,13 +41,13 @@
             label1.TabIndex = 0;
             label1.Text = "add a word window baby";
             // 
-            // add_word
+            // Add_word
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Red;
+            BackColor = SystemColors.Control;
             Controls.Add(label1);
-            Name = "add_word";
+            Name = "Add_word";
             Size = new Size(980, 681);
             ResumeLayout(false);
             PerformLayout();
