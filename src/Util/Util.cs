@@ -19,25 +19,25 @@ public static class Util
     // methods
     public static void Push_window(UserControl usercontrol) => WINDPTR.Push(usercontrol);
     public static UserControl Get_window() => WINDPTR.Peek();
+    private static bool IS_WINDPTR_EMPTY()
+    {
+        if (WINDPTR.Count() == 0)
+        {
+            return true;
+        }
+        return false;
+    }
     public static void Page_BackWard()
     {
         WINDPTR.Pop();
-        if (WINDPTR.Count() != 0)
+        if (!IS_WINDPTR_EMPTY())
         {
             Get_window().Show();
         }
     }
     public static void CreatePage(Page_OPT option,Control container)
     {
-        /* if(container is Panel pnl)
-         {
-             foreach(Control controls in pnl.Controls)
-             {
-                 controls.Hide();
-             }
-             pnl.Controls["pnl_move_window"]!.Show(); // FIX!! :: why pnl_move_window is part of 'pnl_container's control!!!!!!!!
-         }*/
-        if(WINDPTR.Count() != 0)
+        if (!IS_WINDPTR_EMPTY())
         {
             Get_window().Hide();
         }
