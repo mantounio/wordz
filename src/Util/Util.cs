@@ -1,4 +1,5 @@
-﻿using wordz.src.Main_Page;
+﻿using wordz.src.add_word;
+using wordz.src.Main_Page;
 using static Page_OPT;
 
 public enum Page_OPT
@@ -15,52 +16,31 @@ public static class Util
     private static Stack<UserControl> WINDPTR = new();
     public static Control control_container { get; set; }
 
-
     // methods
     public static void Push_window(UserControl usercontrol) => WINDPTR.Push(usercontrol);
     public static UserControl Get_window() => WINDPTR.Peek();
-    public static UserControl Page_BackWard() => WINDPTR.Pop();
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="op">page option</param>
-    /// <param name="container">container indicates which control(form | usercontrol)will contain the page</param>
-    /*public static void CreatePage(Page_OPT op, Control container)
+    public static void Page_BackWard()
     {
-        MessageBox.Show("shows the page");
-        
-
-        UserControl page = null;
-        switch (op)
+        WINDPTR.Pop();
+        if (WINDPTR.Count() != 0)
         {
-            case TAKEQUIZ:
-                // add TAKE QUIZ WINDOW LATER
-                break;
-            case ADDWORD:
-                page = new Add_word()
-                {
-                    Name = "addword",
-                    Dock = DockStyle.Fill,
-                };
-
-                Push_window(page);
-                MessageBox.Show("Test");
-                break;
-            case WORDSLIST:
-                // add WORDS LIST WINDOW LATER:
-                break;
-            case SETTING:
-                // add SETTING WINDOW LATER
-                break;
+            Get_window().Show();
         }
-      
-
-
-        container.Controls.Add(page);
-    }*/
+    }
     public static void CreatePage(Page_OPT option,Control container)
     {
+        /* if(container is Panel pnl)
+         {
+             foreach(Control controls in pnl.Controls)
+             {
+                 controls.Hide();
+             }
+             pnl.Controls["pnl_move_window"]!.Show(); // FIX!! :: why pnl_move_window is part of 'pnl_container's control!!!!!!!!
+         }*/
+        if(WINDPTR.Count() != 0)
+        {
+            Get_window().Hide();
+        }
         switch (option)
         {
             case MAINWINDOW:
@@ -71,6 +51,18 @@ public static class Util
                 };
                 main_page.SendToBack();
                 container.Controls.Add(main_page);
+                Push_window(main_page);
+                break;
+            case ADDWORD:
+                Add_word add_word = new()
+                {
+                    Dock = DockStyle.Fill,
+                    Name = "addword"
+                };
+                add_word.SendToBack();
+                container.Controls.Add(add_word);
+                Push_window(add_word);
+
                 break;
 
         }

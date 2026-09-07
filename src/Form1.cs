@@ -24,6 +24,10 @@ public partial class Form1 : Form
             item.BackColor = color;
         }
     }
+    public Control GetExistingControl(string name)
+    {
+        return Controls[name];
+    }
 
     // form events
     public Form1()
@@ -42,7 +46,8 @@ public partial class Form1 : Form
 
     private void Form1_Load(object sender, EventArgs e)
     {
-        //Util.CreatePage(MAINWINDOW, pnl_container);
+        Util.control_container = pnl_container;
+        Util.CreatePage(MAINWINDOW, pnl_container);
     }
 
     private void pnl_mov_window_MouseDown(object sender, MouseEventArgs e)

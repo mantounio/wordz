@@ -15,12 +15,6 @@ namespace wordz.src.Main_Page
                 control.Hide();
             }
         }
-
-        private void OpenPage(Page_OPT op)
-        {
-            hide_all_controls();
-          
-        }
         public main_page()
         {
             InitializeComponent();
@@ -31,11 +25,9 @@ namespace wordz.src.Main_Page
         {
 
         }
-        private void btn_addword_Click(object sender, EventArgs e)
-        {
-            Util.CreatePage(ADDWORD, Util.control_container);
-            ShowWindow?.Invoke(this, EventArgs.Empty);
-        }
+        public event EventHandler dohandle;
+        private void btn_addword_Click(object sender, EventArgs e) => Util.CreatePage(ADDWORD, Util.control_container);
+
     }
 
 }
