@@ -9,12 +9,14 @@ public enum Page_OPT
     ADDWORD,
     WORDSLIST,
     SETTING,
+    ERROR,
 }
 
 public static class Util
 {
     private static Stack<UserControl> WINDPTR = new();
     public static Control control_container { get; set; }
+    
 
     // methods
     public static void Push_window(UserControl usercontrol) => WINDPTR.Push(usercontrol);
