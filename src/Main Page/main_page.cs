@@ -19,7 +19,6 @@ namespace wordz.src.Main_Page
         }
         public event EventHandler dohandle;
         private void btn_addword_Click(object sender, EventArgs e) => Util.CreatePage(ADDWORD, Util.control_container);
-
     }
 
 }

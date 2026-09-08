@@ -24,10 +24,6 @@ public partial class Form1 : Form
             item.BackColor = color;
         }
     }
-    public Control GetExistingControl(string name)
-    {
-        return Controls[name];
-    }
 
     // form events
     public Form1()
