@@ -64,7 +64,6 @@ public static class Util
                 Push_window(add_word);
 
                 break;
-
         }
     }
 }

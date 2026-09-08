@@ -1,5 +1,4 @@
-﻿using wordz.src.add_word;
-using static Page_OPT;
+﻿using static Page_OPT;
 
 namespace wordz.src.Main_Page
 {
@@ -8,13 +7,6 @@ namespace wordz.src.Main_Page
         // events
         public static event EventHandler ShowWindow;
         // methods
-        private void hide_all_controls()
-        {
-            foreach (Control control in Controls.OfType<Control>())
-            {
-                control.Hide();
-            }
-        }
         public main_page()
         {
             InitializeComponent();
