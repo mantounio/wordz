@@ -3,18 +3,23 @@
 
 namespace wordz.src.words
 {
-    public sealed class Word()//(int guid,string word_entry,string meaning,DateTime date)
+    public sealed class Word
     {
-        [NotNull]
+        public Word()
+        {
+            // there is nothing here...?
+        }
+        public Word(string entry,string meaning,DateTime addedTime,Langs lang = Langs.ENGLISH)
+        {
+            this.entry = entry;
+            this.meaning = meaning;
+            this.addedTime = addedTime;
+            this.lang = lang;
+        }
         public int id { get; set; }
-        [NotNull]
-        public string entry{ get; set; }
-        [NotNull]
+        public string entry { get; set; }
         public string meaning { get; set; }
-        [NotNull]
-        public DateTime date { get; set; }
-        public Langs language { get; set; }
-
-
+        public DateTime addedTime { get; set; }
+        public Langs lang { get; set; }
     }
 }
