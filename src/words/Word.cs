@@ -1,7 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-
-namespace wordz.src.words
+﻿namespace wordz.src.words
 {
     public sealed class Word
     {
