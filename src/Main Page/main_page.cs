@@ -28,6 +28,8 @@ namespace wordz.src.Main_Page
         {
             if (!Util.isTableCreated())
             {
+                Util.pnl_mov_window.BackColor = Color.Red;
+                Util.isErrorPageVisible = true;
                 Util.CreatePage(ERROR, Util.control_container);
             }
         }

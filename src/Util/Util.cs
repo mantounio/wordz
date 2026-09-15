@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using wordz.src.add_word;
+﻿using wordz.src.add_word;
 using wordz.src.dbContext;
 using wordz.src.Error_page;
 using wordz.src.Main_Page;
@@ -23,6 +22,8 @@ public static class Util
     public static string table_name = "word.db";
     public static string fullpath = Path.Combine(current_dir, table_name);
     public static db db = new();
+    public static bool isErrorPageVisible = false;
+    public static Control pnl_mov_window;
 
 
     // methods
