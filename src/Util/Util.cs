@@ -1,4 +1,7 @@
-﻿using wordz.src.add_word;
+﻿using Microsoft.EntityFrameworkCore;
+using wordz.src.add_word;
+using wordz.src.dbContext;
+using wordz.src.Error_page;
 using wordz.src.Main_Page;
 using static Page_OPT;
 
@@ -16,7 +19,11 @@ public static class Util
 {
     private static Stack<UserControl> WINDPTR = new();
     public static Control control_container { get; set; }
-    
+    public static string current_dir = Environment.CurrentDirectory;
+    public static string table_name = "word.db";
+    public static string fullpath = Path.Combine(current_dir, table_name);
+    public static db db = new();
+
 
     // methods
     public static void Push_window(UserControl usercontrol) => WINDPTR.Push(usercontrol);
@@ -39,6 +46,7 @@ public static class Util
     }
     public static void CreatePage(Page_OPT option,Control container)
     {
+        UserControl page = null;
         if (!IS_WINDPTR_EMPTY())
         {
             Get_window().Hide();
@@ -46,27 +54,35 @@ public static class Util
         switch (option)
         {
             case MAINWINDOW:
-                main_page main_page = new()
+                page = new main_page()
                 {
                     Dock = DockStyle.Fill,
                     Name = "mainpage"
                 };
-                main_page.SendToBack();
-                container.Controls.Add(main_page);
-                Push_window(main_page);
                 break;
             case ADDWORD:
-                Add_word add_word = new()
+                page = new Add_word()
                 {
                     Dock = DockStyle.Fill,
-                    Name = "addword"
+                    Name = "addpage"
                 };
-                add_word.SendToBack();
-                container.Controls.Add(add_word);
-                Push_window(add_word);
-
+                break;
+            case ERROR:
+                page = new ErrorPage()
+                {
+                    Dock = DockStyle.Fill,
+                    Name = "errorpage"
+                };
                 break;
         }
+        Push_window(page);
+        page.SendToBack();
+        container.Controls.Add(page);
     }
+    public static bool isTableCreated()
+    {
+        return File.Exists(fullpath);
+    }
+
 }
 

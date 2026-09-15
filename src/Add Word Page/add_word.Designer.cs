@@ -32,6 +32,7 @@
             label1 = new Label();
             button1 = new Button();
             wordBindingSource = new BindingSource(components);
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)wordBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -59,11 +60,22 @@
             // 
             wordBindingSource.DataSource = typeof(words.Word);
             // 
+            // button2
+            // 
+            button2.Location = new Point(578, 117);
+            button2.Name = "button2";
+            button2.Size = new Size(147, 29);
+            button2.TabIndex = 2;
+            button2.Text = "create table";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Add_word
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
             Name = "Add_word";
@@ -78,5 +90,6 @@
         private Label label1;
         private Button button1;
         private BindingSource wordBindingSource;
+        private Button button2;
     }
 }

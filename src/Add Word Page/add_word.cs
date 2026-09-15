@@ -1,4 +1,5 @@
-﻿using wordz.src.Repository;
+﻿using wordz.src.dbContext;
+using wordz.src.Repository;
 
 namespace wordz.src.add_word
 {
@@ -12,9 +13,16 @@ namespace wordz.src.add_word
         private void button1_Click(object sender, EventArgs e)
         {
             // make a dbcontext 
-            var wordrepository = new WordsRepository();//
-            var wordservice = new WordService.WordService(wordrepository);
+            /* var wordrepository = new WordsRepository();//
+             var wordservice = new WordService.WordService(wordrepository);*/
             Util.Page_BackWard();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var wordrepository = new WordsRepository(Util.db);//
+            var wordservice = new WordService.WordService(wordrepository);
+
         }
     }
 }

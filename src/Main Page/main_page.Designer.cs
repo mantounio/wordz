@@ -48,6 +48,7 @@
             btn_takequiz.Text = "Take a Quiz";
             btn_takequiz.TextAlign = ContentAlignment.BottomCenter;
             btn_takequiz.UseVisualStyleBackColor = false;
+            btn_takequiz.Click += btn_takequiz_Click;
             // 
             // btn_addword
             // 
