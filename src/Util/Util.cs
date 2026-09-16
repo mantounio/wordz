@@ -23,7 +23,7 @@ public static class Util
     public static string fullpath = Path.Combine(current_dir, table_name);
     public static db db = new();
     public static bool isErrorPageVisible = false;
-    public static Control pnl_mov_window;
+    public static Control[] arr_controls;
 
 
     // methods
@@ -79,6 +79,7 @@ public static class Util
         Push_window(page);
         page.SendToBack();
         container.Controls.Add(page);
+        page = null;
     }
     public static bool isTableCreated()
     {

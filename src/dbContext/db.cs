@@ -17,7 +17,7 @@ namespace wordz.src.dbContext
             var file = Util.table_name;
             var path = Path.Combine(currentdir, file);
 
-            optionsBuilder.UseSqlite($"data source = {path}");
+            optionsBuilder.UseSqlite($"Data source = {path}");
         }
 
     }

@@ -23,6 +23,14 @@ namespace wordz.src.add_word
             var wordrepository = new WordsRepository(Util.db);//
             var wordservice = new WordService.WordService(wordrepository);
 
+            Util.db.words.Add(new words.Word
+            {
+                entry = "hello",
+                meaning = "salam",
+                addedTime = DateTime.Now,
+                lang = Langs.ENGLISH
+            });
+
         }
     }
 }

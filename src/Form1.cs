@@ -31,7 +31,8 @@ public partial class Form1 : Form
         InitializeComponent();
         Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
         Util.control_container = pnl_container;
-        Util.pnl_mov_window = pnl_move_window;
+
+        Util.arr_controls = [pnl_move_window, btn_close, btn_minimize];
     }
 
     private void btn_close_MouseEnter(object sender, EventArgs e) => change_picbox_btn_picture(btn_close, Properties.Resources.hov_red_24);
@@ -54,7 +55,9 @@ public partial class Form1 : Form
         COORY = e.Y;
         pnl_move_window.BackColor = Color.FromArgb(113, 121, 126); // click to change the color 
         change_colors(Color.FromArgb(113, 121, 126), btn_close, btn_minimize);
-        
+
+        if (Util.isErrorPageVisible)
+            change_colors(Color.FromArgb(136, 8, 8), btn_close, btn_minimize, pnl_move_window);
     }
 
     private void pnl_mov_window_MouseUp(object sender, MouseEventArgs e) 
@@ -63,6 +66,8 @@ public partial class Form1 : Form
         pnl_move_window.BackColor = Color.FromArgb(211, 211, 211);
         change_colors(Color.FromArgb(211, 211, 211), btn_close, btn_minimize);
 
+        if (Util.isErrorPageVisible)
+            change_colors(Color.FromArgb(217, 0, 0), btn_close, btn_minimize, pnl_move_window);
     }
 
     private void pnl_mov_window_MouseMove(object sender, MouseEventArgs e)
@@ -76,7 +81,8 @@ public partial class Form1 : Form
         pnl_move_window.BackColor = Color.FromArgb(211, 211, 211);
         change_colors(Color.FromArgb(211, 211, 211), btn_close, btn_minimize);
 
-        if (Util.isErrorPageVisible) change_colors(Color.FromArgb(217, 0, 0), pnl_move_window);
+        if (Util.isErrorPageVisible)
+            change_colors(Color.FromArgb(217, 0, 0), btn_close, btn_minimize, pnl_move_window);
     }
 
     private void pnl_mov_window_MouseLeave(object sender, EventArgs e)
@@ -84,7 +90,8 @@ public partial class Form1 : Form
         pnl_move_window.BackColor = Color.FromName("control");
         change_colors(Color.FromName("control"), btn_close, btn_minimize);
 
-        if(Util.isErrorPageVisible) change_colors(Color.Red, pnl_move_window);
+        if (Util.isErrorPageVisible) 
+            change_colors(Color.FromArgb(230, 0, 0), btn_close, btn_minimize, pnl_move_window);
     }
 }
 

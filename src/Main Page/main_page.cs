@@ -28,9 +28,16 @@ namespace wordz.src.Main_Page
         {
             if (!Util.isTableCreated())
             {
-                Util.pnl_mov_window.BackColor = Color.Red;
+                foreach(var control in Util.arr_controls)
+                {
+                    control.BackColor = Color.FromArgb(230, 0, 0);
+                }
                 Util.isErrorPageVisible = true;
                 Util.CreatePage(ERROR, Util.control_container);
+            }
+            else
+            {
+                MessageBox.Show("there is word.db");
             }
         }
     }
