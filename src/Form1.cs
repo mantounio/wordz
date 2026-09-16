@@ -17,13 +17,6 @@ public partial class Form1 : Form
 
     // helpers
     private void change_picbox_btn_picture(Control control, Image img) => ((PictureBox)control).Image = img;
-    private void change_colors(Color color, params Control[] controls)
-    {
-        foreach(var item in controls)
-        {
-            item.BackColor = color;
-        }
-    }
 
     // form events
     public Form1()
@@ -54,20 +47,20 @@ public partial class Form1 : Form
         COORX = e.X;
         COORY = e.Y;
         pnl_move_window.BackColor = Color.FromArgb(113, 121, 126); // click to change the color 
-        change_colors(Color.FromArgb(113, 121, 126), btn_close, btn_minimize);
+        Util.change_colors(Color.FromArgb(113, 121, 126), btn_close, btn_minimize);
 
         if (Util.isErrorPageVisible)
-            change_colors(Color.FromArgb(136, 8, 8), btn_close, btn_minimize, pnl_move_window);
+            Util.change_colors(Color.FromArgb(136, 8, 8), btn_close, btn_minimize, pnl_move_window);
     }
 
     private void pnl_mov_window_MouseUp(object sender, MouseEventArgs e) 
     {
         MOV_WIND_LOCATION = false; 
         pnl_move_window.BackColor = Color.FromArgb(211, 211, 211);
-        change_colors(Color.FromArgb(211, 211, 211), btn_close, btn_minimize);
+        Util.change_colors(Color.FromArgb(211, 211, 211), btn_close, btn_minimize);
 
         if (Util.isErrorPageVisible)
-            change_colors(Color.FromArgb(217, 0, 0), btn_close, btn_minimize, pnl_move_window);
+            Util.change_colors(Color.FromArgb(217, 0, 0), btn_close, btn_minimize, pnl_move_window);
     }
 
     private void pnl_mov_window_MouseMove(object sender, MouseEventArgs e)
@@ -79,19 +72,19 @@ public partial class Form1 : Form
     private void pnl_mov_window_MouseEnter(object sender, EventArgs e)
     {
         pnl_move_window.BackColor = Color.FromArgb(211, 211, 211);
-        change_colors(Color.FromArgb(211, 211, 211), btn_close, btn_minimize);
+        Util.change_colors(Color.FromArgb(211, 211, 211), btn_close, btn_minimize);
 
         if (Util.isErrorPageVisible)
-            change_colors(Color.FromArgb(217, 0, 0), btn_close, btn_minimize, pnl_move_window);
+            Util.change_colors(Color.FromArgb(217, 0, 0), btn_close, btn_minimize, pnl_move_window);
     }
 
     private void pnl_mov_window_MouseLeave(object sender, EventArgs e)
     {
         pnl_move_window.BackColor = Color.FromName("control");
-        change_colors(Color.FromName("control"), btn_close, btn_minimize);
+        Util.change_colors(Color.FromName("control"), btn_close, btn_minimize);
 
         if (Util.isErrorPageVisible) 
-            change_colors(Color.FromArgb(230, 0, 0), btn_close, btn_minimize, pnl_move_window);
+            Util.change_colors(Color.FromArgb(230, 0, 0), btn_close, btn_minimize, pnl_move_window);
     }
 }
 

@@ -3,6 +3,7 @@ using wordz.src.dbContext;
 using wordz.src.Error_page;
 using wordz.src.Main_Page;
 using static Page_OPT;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 public enum Page_OPT
 {
@@ -47,7 +48,6 @@ public static class Util
     }
     public static void CreatePage(Page_OPT option,Control container)
     {
-        UserControl page = null;
         if (!IS_WINDPTR_EMPTY())
         {
             Get_window().Hide();
@@ -55,35 +55,48 @@ public static class Util
         switch (option)
         {
             case MAINWINDOW:
-                page = new main_page()
+                main_page main_page= new()
                 {
                     Dock = DockStyle.Fill,
                     Name = "mainpage"
                 };
+                Push_window(main_page);
+                main_page.SendToBack();
+                container.Controls.Add(main_page);
                 break;
             case ADDWORD:
-                page = new Add_word()
+                Add_word add_word = new()
                 {
                     Dock = DockStyle.Fill,
                     Name = "addpage"
                 };
+                Push_window(add_word);
+                add_word.SendToBack();
+                container.Controls.Add(add_word);
                 break;
             case ERROR:
-                page = new ErrorPage()
+                ErrorPage error_page = new()
                 {
                     Dock = DockStyle.Fill,
                     Name = "errorpage"
                 };
+                Push_window(error_page);
+                error_page.SendToBack();
+                container.Controls.Add(error_page);
                 break;
         }
-        Push_window(page);
-        page.SendToBack();
-        container.Controls.Add(page);
-        page = null;
     }
     public static bool isTableCreated()
     {
         return File.Exists(fullpath);
+    }
+
+    public static void change_colors(Color color, params Control[] controls)
+    {
+        foreach (var item in controls)
+        {
+            item.BackColor = color;
+        }
     }
 
 }
