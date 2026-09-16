@@ -3,7 +3,6 @@ using wordz.src.dbContext;
 using wordz.src.Error_page;
 using wordz.src.Main_Page;
 using static Page_OPT;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 public enum Page_OPT
 {
@@ -25,6 +24,19 @@ public static class Util
     public static db db = new();
     public static bool isErrorPageVisible = false;
     public static Control[] arr_controls;
+
+    public Control this[string control_name]
+    {
+        get
+        {
+            return (Control)arr_controls.Where(c => c.Name == control_name);
+        }
+        set
+        {
+
+        }
+
+    }
 
 
     // methods
