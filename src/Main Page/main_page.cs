@@ -6,8 +6,6 @@ namespace wordz.src.Main_Page
 {
     public partial class main_page : UserControl
     {
-        // events
-        public static event EventHandler ShowWindow;
         // methods
         public main_page()
         {
