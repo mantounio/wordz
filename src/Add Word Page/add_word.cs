@@ -1,5 +1,6 @@
 ﻿using wordz.src.dbContext;
 using wordz.src.Repository;
+using wordz.src.words;
 
 namespace wordz.src.add_word
 {
@@ -22,14 +23,18 @@ namespace wordz.src.add_word
         {
             var wordrepository = new WordsRepository(Util.db);//
             var wordservice = new WordService.WordService(wordrepository);
-
-            Util.db.words.Add(new words.Word
+            
+            Word word1 = new words.Word
             {
                 entry = "hello",
                 meaning = "salam",
                 addedTime = DateTime.Now,
                 lang = Langs.ENGLISH
-            });
+            };
+            Util.db.Database.EnsureCreatedAsync();
+
+            Util.db.words.Add(word1);
+            Util.db.SaveChanges();
 
         }
     }
