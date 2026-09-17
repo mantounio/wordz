@@ -41,6 +41,7 @@ public static class Util
     }
     public static void Page_BackWard()
     {
+        WINDPTR.Peek().Hide();
         WINDPTR.Pop();
         if (!IS_WINDPTR_EMPTY())
         {
