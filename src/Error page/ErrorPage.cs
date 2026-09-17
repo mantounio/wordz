@@ -11,6 +11,12 @@
         {
             Util.isErrorPageVisible = false;
             Util.Page_BackWard();
+            
+            foreach(var control in Util.arr_controls)
+            {
+                control.BackColor = Color.FromName("control");
+            }
+            
         }
     }
 }

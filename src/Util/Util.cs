@@ -23,20 +23,9 @@ public static class Util
     public static string fullpath = Path.Combine(current_dir, table_name);
     public static db db = new();
     public static bool isErrorPageVisible = false;
-    public static Control[] arr_controls;
+    public static List<Control> arr_controls;
+    
 
-    public Control this[string control_name]
-    {
-        get
-        {
-            return (Control)arr_controls.Where(c => c.Name == control_name);
-        }
-        set
-        {
-
-        }
-
-    }
 
 
     // methods
@@ -109,6 +98,11 @@ public static class Util
         {
             item.BackColor = color;
         }
+    }
+
+    public static Control get_control(string item_name)
+    {
+        return arr_controls.Where(c => c.Name == item_name).First();
     }
 
 }
