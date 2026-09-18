@@ -50,6 +50,7 @@ public static class Util
     }
     public static void CreatePage(Page_OPT option,Control container)
     {
+        // refactor this code later
         if (!IS_WINDPTR_EMPTY())
         {
             Get_window().Hide();
@@ -88,10 +89,7 @@ public static class Util
                 break;
         }
     }
-    public static bool isTableCreated()
-    {
-        return File.Exists(fullpath);
-    }
+    public static bool isTableCreated() => File.Exists(fullpath);
 
     public static void change_colors(Color color, params Control[] controls)
     {
@@ -101,10 +99,8 @@ public static class Util
         }
     }
 
-    public static Control get_control(string item_name)
-    {
-        return arr_controls.Where(c => c.Name == item_name).First();
-    }
+    public static Control get_control(string item_name) => arr_controls.Where(c => c.Name == item_name).First();
+
 
 }
 

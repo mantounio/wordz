@@ -18,7 +18,6 @@ namespace wordz.src.add_word
              var wordservice = new WordService.WordService(wordrepository);*/
             Util.Page_BackWard();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             var wordrepository = new WordsRepository(Util.db);//
@@ -35,7 +34,6 @@ namespace wordz.src.add_word
 
             Util.db.words.Add(word1);
             Util.db.SaveChanges();
-
         }
     }
 }
