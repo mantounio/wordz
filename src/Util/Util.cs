@@ -55,39 +55,37 @@ public static class Util
         {
             Get_window().Hide();
         }
+
+        UserControl page = null;
+
         switch (option)
         {
             case MAINWINDOW:
-                main_page main_page= new()
+                page = new main_page()
                 {
                     Dock = DockStyle.Fill,
                     Name = "mainpage"
                 };
-                Push_window(main_page);
-                main_page.SendToBack();
-                container.Controls.Add(main_page);
+                
                 break;
             case ADDWORD:
-                Add_word add_word = new()
+                page = new Add_word()
                 {
                     Dock = DockStyle.Fill,
                     Name = "addpage"
                 };
-                Push_window(add_word);
-                add_word.SendToBack();
-                container.Controls.Add(add_word);
                 break;
             case ERROR:
-                ErrorPage error_page = new()
+                page = new ErrorPage()
                 {
                     Dock = DockStyle.Fill,
                     Name = "errorpage"
                 };
-                Push_window(error_page);
-                error_page.SendToBack();
-                container.Controls.Add(error_page);
                 break;
         }
+        Push_window(page);
+        page.SendToBack();
+        container.Controls.Add(page);
     }
     public static bool isTableCreated() => File.Exists(fullpath);
 
