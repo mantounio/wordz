@@ -24,9 +24,7 @@ public static class Util
     public static db db = new();
     public static bool isErrorPageVisible = false;
     public static List<Control> arr_controls;
-    
-
-
+    public static Label error_lbl;
 
     // methods
     public static void Push_window(UserControl usercontrol) => WINDPTR.Push(usercontrol);
@@ -66,7 +64,6 @@ public static class Util
                     Dock = DockStyle.Fill,
                     Name = "mainpage"
                 };
-                
                 break;
             case ADDWORD:
                 page = new Add_word()
@@ -99,6 +96,11 @@ public static class Util
 
     public static Control get_control(string item_name) => arr_controls.Where(c => c.Name == item_name).First();
 
-
+    public static void set_error(string message)
+    {
+        //size of window{ Width = 962, Height = 634}
+        error_lbl.Text = message;
+        
+    }
 }
 

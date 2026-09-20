@@ -53,9 +53,9 @@ public partial class Form1 : Form
             Util.change_colors(Color.FromArgb(136, 8, 8), btn_close, btn_minimize, pnl_move_window);
     }
 
-    private void pnl_mov_window_MouseUp(object sender, MouseEventArgs e) 
+    private void pnl_mov_window_MouseUp(object sender, MouseEventArgs e)
     {
-        MOV_WIND_LOCATION = false; 
+        MOV_WIND_LOCATION = false;
         pnl_move_window.BackColor = Color.FromArgb(211, 211, 211);
         Util.change_colors(Color.FromArgb(211, 211, 211), btn_close, btn_minimize);
 
@@ -83,7 +83,7 @@ public partial class Form1 : Form
         pnl_move_window.BackColor = Color.FromName("control");
         Util.change_colors(Color.FromName("control"), btn_close, btn_minimize);
 
-        if (Util.isErrorPageVisible) 
+        if (Util.isErrorPageVisible)
             Util.change_colors(Color.FromArgb(230, 0, 0), btn_close, btn_minimize, pnl_move_window);
     }
 }

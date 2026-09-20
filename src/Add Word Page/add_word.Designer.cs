@@ -28,12 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             label1 = new Label();
             button1 = new Button();
-            wordBindingSource = new BindingSource(components);
             button2 = new Button();
-            ((System.ComponentModel.ISupportInitialize)wordBindingSource).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -56,10 +53,6 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // wordBindingSource
-            // 
-            wordBindingSource.DataSource = typeof(words.Word);
-            // 
             // button2
             // 
             button2.Location = new Point(578, 117);
@@ -80,7 +73,6 @@
             Controls.Add(label1);
             Name = "Add_word";
             Size = new Size(980, 681);
-            ((System.ComponentModel.ISupportInitialize)wordBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -89,7 +81,6 @@
 
         private Label label1;
         private Button button1;
-        private BindingSource wordBindingSource;
         private Button button2;
     }
 }

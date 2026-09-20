@@ -32,10 +32,11 @@ namespace wordz.src.Main_Page
                 }
                 Util.isErrorPageVisible = true;
                 Util.CreatePage(ERROR, Util.control_container);
+                Util.set_error("where is the table bro just find it brooooo??");
             }
             else
             {
-                MessageBox.Show("there is word.db");
+               
             }
         }
     }
