@@ -32,7 +32,7 @@ namespace wordz.src.Main_Page
                 }
                 Util.isErrorPageVisible = true;
                 Util.CreatePage(ERROR, Util.control_container);
-                Util.set_error("where is the table bro just find it brooooo??");
+                Util.set_error("you don't have a words list to take a quiz on!\n add a word first");
             }
             else
             {

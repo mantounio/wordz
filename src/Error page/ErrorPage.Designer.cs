@@ -30,7 +30,7 @@
         {
             lbl_msg = new Label();
             button1 = new Button();
-            button2 = new Button();
+            linkLabel1 = new LinkLabel();
             SuspendLayout();
             // 
             // lbl_msg
@@ -46,7 +46,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(443, 435);
+            button1.Location = new Point(226, 480);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 1;
@@ -54,33 +54,35 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // button2
+            // linkLabel1
             // 
-            button2.Location = new Point(443, 391);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 2;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(348, 489);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(125, 20);
+            linkLabel1.TabIndex = 3;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "go to add a word";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // ErrorPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 0, 0);
-            Controls.Add(button2);
+            Controls.Add(linkLabel1);
             Controls.Add(button1);
             Controls.Add(lbl_msg);
             Name = "ErrorPage";
             Size = new Size(980, 681);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Label lbl_msg;
         private Button button1;
-        private Button button2;
+        private LinkLabel linkLabel1;
     }
 }

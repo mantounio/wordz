@@ -20,10 +20,10 @@
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Util.set_error("this is a error");
-            MessageBox.Show(lbl_msg.Location.ToString());
+            Util.CreatePage(Page_OPT.ADDWORD, Util.control_container);
+            Util.isErrorPageVisible = false;
         }
     }
 }
