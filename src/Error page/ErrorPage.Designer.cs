@@ -31,6 +31,8 @@
             lbl_msg = new Label();
             button1 = new Button();
             linkLabel1 = new LinkLabel();
+            pnl_lbl_error = new Panel();
+            pnl_lbl_error.SuspendLayout();
             SuspendLayout();
             // 
             // lbl_msg
@@ -39,7 +41,7 @@
             lbl_msg.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbl_msg.Location = new Point(0, 0);
             lbl_msg.Name = "lbl_msg";
-            lbl_msg.Size = new Size(980, 681);
+            lbl_msg.Size = new Size(453, 263);
             lbl_msg.TabIndex = 0;
             lbl_msg.Text = "This is an error message sad!!!! :(";
             lbl_msg.TextAlign = ContentAlignment.MiddleCenter;
@@ -65,16 +67,25 @@
             linkLabel1.Text = "go to add a word";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
+            // pnl_lbl_error
+            // 
+            pnl_lbl_error.Controls.Add(lbl_msg);
+            pnl_lbl_error.Location = new Point(83, 197);
+            pnl_lbl_error.Name = "pnl_lbl_error";
+            pnl_lbl_error.Size = new Size(453, 263);
+            pnl_lbl_error.TabIndex = 4;
+            // 
             // ErrorPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 0, 0);
+            Controls.Add(pnl_lbl_error);
             Controls.Add(linkLabel1);
             Controls.Add(button1);
-            Controls.Add(lbl_msg);
             Name = "ErrorPage";
             Size = new Size(980, 681);
+            pnl_lbl_error.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -84,5 +95,6 @@
         private Label lbl_msg;
         private Button button1;
         private LinkLabel linkLabel1;
+        private Panel pnl_lbl_error;
     }
 }

@@ -6,6 +6,8 @@
         {
             InitializeComponent();
             Util.error_lbl = lbl_msg;
+            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
