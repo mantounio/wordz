@@ -121,6 +121,12 @@
   <data name="d_quiz_75px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\d_quiz_75px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="error_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\error_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="error_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vecteezy_alert-danger-warning-sign-flat-color-icon-vector-icon_18004804.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="hov_red_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hov_red_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

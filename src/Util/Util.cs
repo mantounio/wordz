@@ -25,6 +25,7 @@ public static class Util
     public static bool isErrorPageVisible = false;
     public static List<Control> arr_controls;
     public static Label error_lbl;
+    
 
     // methods
     public static void Push_window(UserControl usercontrol) => WINDPTR.Push(usercontrol);

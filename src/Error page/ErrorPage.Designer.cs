@@ -32,7 +32,9 @@
             button1 = new Button();
             linkLabel1 = new LinkLabel();
             pnl_lbl_error = new Panel();
+            pictureBox1 = new PictureBox();
             pnl_lbl_error.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lbl_msg
@@ -75,17 +77,29 @@
             pnl_lbl_error.Size = new Size(453, 263);
             pnl_lbl_error.TabIndex = 4;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.error_100px;
+            pictureBox1.Location = new Point(561, 169);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(394, 364);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // ErrorPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 0, 0);
+            Controls.Add(pictureBox1);
             Controls.Add(pnl_lbl_error);
             Controls.Add(linkLabel1);
             Controls.Add(button1);
             Name = "ErrorPage";
             Size = new Size(980, 681);
             pnl_lbl_error.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -96,5 +110,6 @@
         private Button button1;
         private LinkLabel linkLabel1;
         private Panel pnl_lbl_error;
+        private PictureBox pictureBox1;
     }
 }
