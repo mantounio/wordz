@@ -63,6 +63,26 @@ namespace wordz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3d_error100px {
+            get {
+                object obj = ResourceManager.GetObject("3d_error100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap back_50px {
+            get {
+                object obj = ResourceManager.GetObject("back_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap d_quiz_75px {
             get {
                 object obj = ResourceManager.GetObject("d_quiz_75px", resourceCulture);
@@ -186,6 +206,16 @@ namespace wordz.Properties {
         internal static System.Drawing.Bitmap red48 {
             get {
                 object obj = ResourceManager.GetObject("red48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vector_error_2 {
+            get {
+                object obj = ResourceManager.GetObject("vector_error_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

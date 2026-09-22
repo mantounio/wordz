@@ -50,11 +50,13 @@
             // 
             // button1
             // 
-            button1.Location = new Point(226, 480);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.FromArgb(230, 0, 0);
+            button1.Image = Properties.Resources.back_50px;
+            button1.Location = new Point(25, 60);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(69, 52);
             button1.TabIndex = 1;
-            button1.Text = "back";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -79,11 +81,11 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.error_100px;
-            pictureBox1.Location = new Point(561, 169);
+            pictureBox1.Image = Properties.Resources._3d_error100px;
+            pictureBox1.Location = new Point(679, 567);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(394, 364);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.Size = new Size(100, 100);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 

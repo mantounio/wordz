@@ -118,6 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="3d_error100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3d_error100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-back-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="d_quiz_75px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\d_quiz_75px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -156,6 +162,9 @@
   </data>
   <data name="red_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red 24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vector_error_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vecteezy_error-illustration-design_47412607.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="yellow_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yellow_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
