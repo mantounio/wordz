@@ -30,7 +30,6 @@
         {
             lbl_msg = new Label();
             button1 = new Button();
-            linkLabel1 = new LinkLabel();
             pnl_lbl_error = new Panel();
             pictureBox1 = new PictureBox();
             pnl_lbl_error.SuspendLayout();
@@ -60,17 +59,6 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(348, 489);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(125, 20);
-            linkLabel1.TabIndex = 3;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "go to add a word";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
-            // 
             // pnl_lbl_error
             // 
             pnl_lbl_error.Controls.Add(lbl_msg);
@@ -96,7 +84,6 @@
             BackColor = Color.FromArgb(230, 0, 0);
             Controls.Add(pictureBox1);
             Controls.Add(pnl_lbl_error);
-            Controls.Add(linkLabel1);
             Controls.Add(button1);
             Name = "ErrorPage";
             Size = new Size(980, 681);
@@ -110,7 +97,6 @@
 
         private Label lbl_msg;
         private Button button1;
-        private LinkLabel linkLabel1;
         private Panel pnl_lbl_error;
         private PictureBox pictureBox1;
     }

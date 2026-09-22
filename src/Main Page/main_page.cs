@@ -2,6 +2,7 @@
 using wordz.src.words;
 using static Page_OPT;
 
+
 namespace wordz.src.Main_Page
 {
     public partial class main_page : UserControl
@@ -24,6 +25,7 @@ namespace wordz.src.Main_Page
 
         private void btn_takequiz_Click(object sender, EventArgs e)
         {
+
             if (!Util.isTableCreated())
             {
                 foreach(var control in Util.arr_controls)
@@ -32,7 +34,7 @@ namespace wordz.src.Main_Page
                 }
                 Util.isErrorPageVisible = true;
                 Util.CreatePage(ERROR, Util.control_container);
-                Util.set_error("Your word list is empty. Add a word first, then you can take a quiz.");
+                Util.set_error("You need at least 10 words in your list to take a quiz. Add some more words and try again!");
             }
             else
             {

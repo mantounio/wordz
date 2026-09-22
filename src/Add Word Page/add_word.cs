@@ -10,19 +10,11 @@ namespace wordz.src.add_word
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // make a dbcontext 
-            /* var wordrepository = new WordsRepository();//
-             var wordservice = new WordService.WordService(wordrepository);*/
-            Util.Page_BackWard();
-        }
         private void button2_Click(object sender, EventArgs e)
         {
             var wordrepository = new WordsRepository(Util.db);//
             var wordservice = new WordService.WordService(wordrepository);
-            
+
             Word word1 = new words.Word
             {
                 entry = "hello",
@@ -35,5 +27,8 @@ namespace wordz.src.add_word
             Util.db.words.Add(word1);
             Util.db.SaveChanges();
         }
+
+        private void button3_Click(object sender, EventArgs e) => Util.Page_BackWard();
+
     }
 }

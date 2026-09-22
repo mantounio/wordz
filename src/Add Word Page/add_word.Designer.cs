@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            button1 = new Button();
             button2 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -43,16 +43,6 @@
             label1.TabIndex = 0;
             label1.Text = "add a word window baby";
             // 
-            // button1
-            // 
-            button1.Location = new Point(129, 102);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 1;
-            button1.Text = "back";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // button2
             // 
             button2.Location = new Point(578, 117);
@@ -63,13 +53,25 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // button3
+            // 
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.ForeColor = SystemColors.Control;
+            button3.Image = Properties.Resources.back_50px;
+            button3.Location = new Point(25, 60);
+            button3.Name = "button3";
+            button3.Size = new Size(69, 52);
+            button3.TabIndex = 3;
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Add_word
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
+            Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(label1);
             Name = "Add_word";
             Size = new Size(980, 681);
@@ -80,7 +82,7 @@
         #endregion
 
         private Label label1;
-        private Button button1;
         private Button button2;
+        private Button button3;
     }
 }
