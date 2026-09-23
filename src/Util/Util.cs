@@ -37,7 +37,11 @@ public static class Util
         }
         return false;
     }
-    public static UserControl WINDPTR_POP() => WINDPTR.Pop();
+    public static void WINDPTR_POP()
+    {
+        WINDPTR.Peek().Hide();
+        WINDPTR.Pop();
+    }
 
     public static void Page_BackWard()
     {

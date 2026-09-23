@@ -22,13 +22,13 @@ namespace wordz.src.Error_page
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Util.CreatePage(Page_OPT.ADDWORD, Util.control_container);
+            Util.CreatePage(ADDWORD, Util.control_container);
             Util.isErrorPageVisible = false;
         }
 
         private void link_lbl_redirect_add_word_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //Util.WINDPTR_POP();
+            Util.WINDPTR_POP();
             Util.change_colors(Color.FromName("control"), Util.arr_controls);
             Util.isErrorPageVisible = false;
             Util.CreatePage(ADDWORD, Util.control_container);
