@@ -1,4 +1,6 @@
-﻿namespace wordz.src.words
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace wordz.src.words
 {
     public sealed class Word
     {
@@ -6,17 +8,18 @@
         {
             // there is nothing here...?
         }
-        public Word(string word,string meaning,DateTime addedTime,Langs lang = Langs.ENGLISH)
+        public Word(string Word,string Meaning,DateTime AddedTime,Langs Lang = Langs.ENGLISH)
         {
-            this.word = word;
-            this.meaning = meaning;
-            this.addedTime = addedTime;
-            this.lang = lang;
+            _Word = Word;
+            this.Meaning = Meaning;
+            this.AddedTime = AddedTime;
+            this.Lang = Lang;
         }
-        public int id { get; set; }
-        public string word { get; set; }
-        public string meaning { get; set; }
-        public DateTime addedTime { get; set; }
-        public Langs lang { get; set; }
+        
+        public int Id { get; set; }
+        public string _Word { get; set; }
+        public string Meaning { get; set; }
+        public DateTime AddedTime { get; set; }
+        public Langs Lang { get; set; }
     }
 }
