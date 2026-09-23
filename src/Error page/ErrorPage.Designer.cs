@@ -31,6 +31,7 @@
             lbl_msg = new Label();
             button1 = new Button();
             pnl_lbl_error = new Panel();
+            link_lbl_redirect_add_word = new LinkLabel();
             pictureBox1 = new PictureBox();
             pnl_lbl_error.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -44,7 +45,7 @@
             lbl_msg.Name = "lbl_msg";
             lbl_msg.Size = new Size(453, 263);
             lbl_msg.TabIndex = 0;
-            lbl_msg.Text = "This is an error message sad!!!! :(";
+            lbl_msg.Text = "msg";
             lbl_msg.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button1
@@ -61,11 +62,26 @@
             // 
             // pnl_lbl_error
             // 
+            pnl_lbl_error.Controls.Add(link_lbl_redirect_add_word);
             pnl_lbl_error.Controls.Add(lbl_msg);
             pnl_lbl_error.Location = new Point(83, 197);
             pnl_lbl_error.Name = "pnl_lbl_error";
             pnl_lbl_error.Size = new Size(453, 263);
             pnl_lbl_error.TabIndex = 4;
+            // 
+            // link_lbl_redirect_add_word
+            // 
+            link_lbl_redirect_add_word.AutoSize = true;
+            link_lbl_redirect_add_word.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            link_lbl_redirect_add_word.LinkBehavior = LinkBehavior.HoverUnderline;
+            link_lbl_redirect_add_word.LinkColor = Color.FromArgb(255, 243, 176);
+            link_lbl_redirect_add_word.Location = new Point(159, 225);
+            link_lbl_redirect_add_word.Name = "link_lbl_redirect_add_word";
+            link_lbl_redirect_add_word.Size = new Size(154, 28);
+            link_lbl_redirect_add_word.TabIndex = 6;
+            link_lbl_redirect_add_word.TabStop = true;
+            link_lbl_redirect_add_word.Text = "Add a new word";
+            link_lbl_redirect_add_word.LinkClicked += link_lbl_redirect_add_word_LinkClicked;
             // 
             // pictureBox1
             // 
@@ -88,6 +104,7 @@
             Name = "ErrorPage";
             Size = new Size(980, 681);
             pnl_lbl_error.ResumeLayout(false);
+            pnl_lbl_error.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -99,5 +116,6 @@
         private Button button1;
         private Panel pnl_lbl_error;
         private PictureBox pictureBox1;
+        private LinkLabel link_lbl_redirect_add_word;
     }
 }

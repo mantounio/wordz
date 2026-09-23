@@ -30,6 +30,7 @@
         {
             button2 = new Button();
             button3 = new Button();
+            materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             SuspendLayout();
             // 
             // button2
@@ -54,11 +55,30 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // materialTextBox1
+            // 
+            materialTextBox1.AnimateReadOnly = false;
+            materialTextBox1.BorderStyle = BorderStyle.None;
+            materialTextBox1.Depth = 0;
+            materialTextBox1.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialTextBox1.Hint = "yo";
+            materialTextBox1.LeadingIcon = null;
+            materialTextBox1.Location = new Point(171, 291);
+            materialTextBox1.MaxLength = 50;
+            materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
+            materialTextBox1.Multiline = false;
+            materialTextBox1.Name = "materialTextBox1";
+            materialTextBox1.Size = new Size(189, 50);
+            materialTextBox1.TabIndex = 5;
+            materialTextBox1.Text = "";
+            materialTextBox1.TrailingIcon = null;
+            // 
             // Add_word
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
+            Controls.Add(materialTextBox1);
             Controls.Add(button3);
             Controls.Add(button2);
             Name = "Add_word";
@@ -69,5 +89,6 @@
         #endregion
         private Button button2;
         private Button button3;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
     }
 }

@@ -13,7 +13,7 @@ namespace wordz.src.add_word
         private void button2_Click(object sender, EventArgs e)
         {
 
-            Word word1 = new words.Word
+           /* Word word1 = new words.Word
             {
                 entry = "hello",
                 meaning = "salam",
@@ -23,7 +23,7 @@ namespace wordz.src.add_word
             Util.db.Database.EnsureCreatedAsync();
 
             Util.db.words.Add(word1);
-            Util.db.SaveChanges();
+            Util.db.SaveChanges();*/
         }
 
         private void button3_Click(object sender, EventArgs e) => Util.Page_BackWard();

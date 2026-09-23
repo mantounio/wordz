@@ -16,7 +16,7 @@ namespace wordz.src.Main_Page
         // main events
         private void main_page_Click(object sender, EventArgs e)
         {
-
+            ActiveControl = null;
         }
         public event EventHandler dohandle;
         private void btn_addword_Click(object sender, EventArgs e) =>

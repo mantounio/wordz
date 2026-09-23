@@ -32,7 +32,7 @@
             btn_addword = new Button();
             btn_setting = new Button();
             btn_wordslist = new Button();
-            label1 = new Label();
+            lbl_title = new Label();
             SuspendLayout();
             // 
             // btn_takequiz
@@ -90,22 +90,22 @@
             btn_wordslist.TextAlign = ContentAlignment.BottomCenter;
             btn_wordslist.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lbl_title
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Roboto", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(17, 49);
-            label1.Name = "label1";
-            label1.Size = new Size(163, 53);
-            label1.TabIndex = 5;
-            label1.Text = "•Wordz";
+            lbl_title.AutoSize = true;
+            lbl_title.Font = new Font("Roboto", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_title.Location = new Point(17, 49);
+            lbl_title.Name = "lbl_title";
+            lbl_title.Size = new Size(163, 53);
+            lbl_title.TabIndex = 5;
+            lbl_title.Text = "•Wordz";
             // 
             // main_page
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            Controls.Add(label1);
+            Controls.Add(lbl_title);
             Controls.Add(btn_setting);
             Controls.Add(btn_wordslist);
             Controls.Add(btn_addword);
@@ -123,6 +123,6 @@
         private Button btn_addword;
         private Button btn_setting;
         private Button btn_wordslist;
-        private Label label1;
+        private Label lbl_title;
     }
 }
