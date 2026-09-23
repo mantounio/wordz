@@ -6,15 +6,15 @@
         {
             // there is nothing here...?
         }
-        public Word(string entry,string meaning,DateTime addedTime,Langs lang = Langs.ENGLISH)
+        public Word(string word,string meaning,DateTime addedTime,Langs lang = Langs.ENGLISH)
         {
-            this.entry = entry;
+            this.word = word;
             this.meaning = meaning;
             this.addedTime = addedTime;
             this.lang = lang;
         }
         public int id { get; set; }
-        public string entry { get; set; }
+        public string word { get; set; }
         public string meaning { get; set; }
         public DateTime addedTime { get; set; }
         public Langs lang { get; set; }
