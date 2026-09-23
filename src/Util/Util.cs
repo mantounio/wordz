@@ -23,10 +23,9 @@ public static class Util
     public static string fullpath = Path.Combine(current_dir, table_name);
     public static db db = new();
     public static bool isErrorPageVisible = false;
-    public static List<Control> arr_controls;
+    public static Control[] arr_controls;
     public static Label error_lbl;
     
-
     // methods
     public static void Push_window(UserControl usercontrol) => WINDPTR.Push(usercontrol);
     public static UserControl Get_window() => WINDPTR.Peek();
@@ -38,10 +37,12 @@ public static class Util
         }
         return false;
     }
+    public static UserControl WINDPTR_POP() => WINDPTR.Pop();
+
     public static void Page_BackWard()
     {
         WINDPTR.Peek().Hide();
-        WINDPTR.Pop();
+        WINDPTR_POP();
         if (!IS_WINDPTR_EMPTY())
         {
             Get_window().Show();
@@ -97,11 +98,6 @@ public static class Util
 
     public static Control get_control(string item_name) => arr_controls.Where(c => c.Name == item_name).First();
 
-    public static void set_error(string message)
-    {
-        //size of window{ Width = 962, Height = 634}
-        error_lbl.Text = message;
-        
-    }
+    public static void set_error(string message) => error_lbl.Text = message;
 }
 
