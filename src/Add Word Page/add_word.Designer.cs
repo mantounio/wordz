@@ -28,24 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             button2 = new Button();
             button3 = new Button();
             SuspendLayout();
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(309, 320);
-            label1.Name = "label1";
-            label1.Size = new Size(363, 41);
-            label1.TabIndex = 0;
-            label1.Text = "add a word window baby";
-            // 
             // button2
             // 
-            button2.Location = new Point(578, 117);
+            button2.Location = new Point(700, 538);
             button2.Name = "button2";
             button2.Size = new Size(147, 29);
             button2.TabIndex = 2;
@@ -72,16 +61,12 @@
             BackColor = SystemColors.Control;
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(label1);
             Name = "Add_word";
             Size = new Size(980, 681);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
         private Button button2;
         private Button button3;
     }
