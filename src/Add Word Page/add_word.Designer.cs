@@ -28,20 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button2 = new Button();
             button3 = new Button();
-            materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            lbl_word = new MaterialSkin.Controls.MaterialLabel();
+            materialCard1.SuspendLayout();
             SuspendLayout();
-            // 
-            // button2
-            // 
-            button2.Location = new Point(700, 538);
-            button2.Name = "button2";
-            button2.Size = new Size(147, 29);
-            button2.TabIndex = 2;
-            button2.Text = "create table";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -55,40 +46,49 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
-            // materialTextBox1
+            // materialCard1
             // 
-            materialTextBox1.AnimateReadOnly = false;
-            materialTextBox1.BorderStyle = BorderStyle.None;
-            materialTextBox1.Depth = 0;
-            materialTextBox1.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox1.Hint = "yo";
-            materialTextBox1.LeadingIcon = null;
-            materialTextBox1.Location = new Point(171, 291);
-            materialTextBox1.MaxLength = 50;
-            materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox1.Multiline = false;
-            materialTextBox1.Name = "materialTextBox1";
-            materialTextBox1.Size = new Size(189, 50);
-            materialTextBox1.TabIndex = 5;
-            materialTextBox1.Text = "";
-            materialTextBox1.TrailingIcon = null;
+            materialCard1.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard1.Controls.Add(lbl_word);
+            materialCard1.Depth = 0;
+            materialCard1.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            materialCard1.Location = new Point(171, 139);
+            materialCard1.Margin = new Padding(14);
+            materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialCard1.Name = "materialCard1";
+            materialCard1.Padding = new Padding(14);
+            materialCard1.Size = new Size(638, 403);
+            materialCard1.TabIndex = 4;
+            // 
+            // lbl_word
+            // 
+            lbl_word.AutoSize = true;
+            lbl_word.Depth = 0;
+            lbl_word.Font = new Font("Roboto", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_word.Location = new Point(76, 103);
+            lbl_word.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_word.Name = "lbl_word";
+            lbl_word.Size = new Size(40, 19);
+            lbl_word.TabIndex = 1;
+            lbl_word.Text = "word:";
             // 
             // Add_word
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            Controls.Add(materialTextBox1);
+            Controls.Add(materialCard1);
             Controls.Add(button3);
-            Controls.Add(button2);
             Name = "Add_word";
             Size = new Size(980, 681);
+            materialCard1.ResumeLayout(false);
+            materialCard1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-        private Button button2;
         private Button button3;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialCard materialCard1;
+        private MaterialSkin.Controls.MaterialLabel lbl_word;
     }
 }

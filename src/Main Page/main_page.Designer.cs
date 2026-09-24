@@ -93,10 +93,10 @@
             // lbl_title
             // 
             lbl_title.AutoSize = true;
-            lbl_title.Font = new Font("Roboto", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_title.Location = new Point(17, 49);
+            lbl_title.Font = new Font("Segoe UI Historic", 25.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_title.Location = new Point(18, 41);
             lbl_title.Name = "lbl_title";
-            lbl_title.Size = new Size(163, 53);
+            lbl_title.Size = new Size(165, 57);
             lbl_title.TabIndex = 5;
             lbl_title.Text = "•Wordz";
             // 
