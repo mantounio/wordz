@@ -1,4 +1,5 @@
-﻿using wordz.src.dbContext;
+﻿using MaterialSkin.Controls;
+using wordz.src.dbContext;
 using wordz.src.Repository;
 using wordz.src.words;
 
@@ -12,7 +13,6 @@ namespace wordz.src.add_word
         }
         private void button2_Click(object sender, EventArgs e)
         {
-
            /* Word word1 = new words.Word
             {
                 entry = "hello",

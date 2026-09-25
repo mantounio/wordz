@@ -25,6 +25,13 @@ public static class Util
     public static bool isErrorPageVisible = false;
     public static Control[] arr_controls;
     public static Label error_lbl;
+    public static List<string> language_items
+    {
+        get
+        {
+            return Enum.GetNames<Langs>().ToList();
+        }
+    }
     
     // methods
     public static void Push_window(UserControl usercontrol) => WINDPTR.Push(usercontrol);
