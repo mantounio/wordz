@@ -20,7 +20,6 @@ namespace wordz.src.Main_Page
                                             i.AddedTime,
                                             i.Lang
                                         }).ToList();
-
         }
 
         // main events

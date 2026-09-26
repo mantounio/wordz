@@ -9,6 +9,7 @@ namespace wordz.service
 
         internal WordService(IRepository repository)
         {
+            Util.db.Database.EnsureCreatedAsync();
             _repository = repository;
         }
 

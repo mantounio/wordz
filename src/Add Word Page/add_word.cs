@@ -14,10 +14,6 @@ namespace wordz.src.add_word
             InitializeComponent();
             materialComboBox1.Items.AddRange(Util.language_items.ToArray());
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-          
-        }
 
         private void button3_Click(object sender, EventArgs e) => Util.Page_BackWard();
 
@@ -26,14 +22,14 @@ namespace wordz.src.add_word
             IRepository repository = new WordsRepository(Util.db);
             WordService words = new(repository);
 
-            Util.db.Database.EnsureCreatedAsync();
+            
 
             words.CreateWord(new words.Word
             {
                 _Word = materialTextBox1.Text.TrimEnd().Trim().TrimStart(),
                 Meaning = materialTextBox2.Text.TrimEnd().Trim().TrimStart(),
                 AddedTime = DateTime.Now,
-                Lang = Enum.Parse<Langs>(materialComboBox1.SelectedItem.ToString())
+                Lang = Enum.Parse<Langs>(materialComboBox1.SelectedItem!.ToString()!)
             });
 
             Util.db.SaveChangesAsync();
