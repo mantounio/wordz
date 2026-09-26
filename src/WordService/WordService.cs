@@ -1,7 +1,7 @@
 ﻿using wordz.src.Repository;
 using wordz.src.words;
 
-namespace wordz.service
+namespace wordz.src.WordService
 {
     public class WordService
     {
@@ -20,7 +20,7 @@ namespace wordz.service
         public void DeleteWord(int id)
         {
             var word = _repository.GetById(id);
-            if(word != null)
+            if (word != null)
             {
                 _repository.Delete(word);
             }

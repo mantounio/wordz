@@ -1,14 +1,15 @@
 ﻿using MaterialSkin.Controls;
 using wordz.src.dbContext;
 using wordz.src.Repository;
-using wordz.src.words;
-using wordz.service;
+using wordz.src.WordService;
 
 
 namespace wordz.src.add_word
 {
     public partial class Add_word : UserControl
     {
+        // methods
+        public bool 
         public Add_word()
         {
             InitializeComponent();
@@ -20,7 +21,8 @@ namespace wordz.src.add_word
         private void materialButton1_Click(object sender, EventArgs e)
         {
             IRepository repository = new WordsRepository(Util.db);
-            WordService words = new(repository);
+            WordService.WordService words = new(repository);
+            
 
             
 

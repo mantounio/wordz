@@ -37,6 +37,7 @@
             materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
             lbl_language = new Label();
+            lbl_title = new Label();
             materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -56,6 +57,7 @@
             // materialCard1
             // 
             materialCard1.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard1.Controls.Add(lbl_title);
             materialCard1.Controls.Add(pictureBox1);
             materialCard1.Controls.Add(materialButton2);
             materialCard1.Controls.Add(materialButton1);
@@ -76,7 +78,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.word_to_word_50px;
-            pictureBox1.Location = new Point(294, 176);
+            pictureBox1.Location = new Point(299, 115);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(50, 50);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -128,8 +130,9 @@
             materialTextBox2.BorderStyle = BorderStyle.None;
             materialTextBox2.Depth = 0;
             materialTextBox2.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialTextBox2.Hint = "Meaning";
             materialTextBox2.LeadingIcon = null;
-            materialTextBox2.Location = new Point(387, 176);
+            materialTextBox2.Location = new Point(392, 115);
             materialTextBox2.MaxLength = 50;
             materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
             materialTextBox2.Multiline = false;
@@ -138,6 +141,7 @@
             materialTextBox2.TabIndex = 4;
             materialTextBox2.Text = "";
             materialTextBox2.TrailingIcon = null;
+            materialTextBox2.UseAccent = false;
             // 
             // materialTextBox1
             // 
@@ -145,8 +149,9 @@
             materialTextBox1.BorderStyle = BorderStyle.None;
             materialTextBox1.Depth = 0;
             materialTextBox1.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialTextBox1.Hint = "Word";
             materialTextBox1.LeadingIcon = null;
-            materialTextBox1.Location = new Point(46, 176);
+            materialTextBox1.Location = new Point(51, 115);
             materialTextBox1.MaxLength = 50;
             materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
             materialTextBox1.Multiline = false;
@@ -168,9 +173,10 @@
             materialComboBox1.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialComboBox1.ForeColor = Color.FromArgb(222, 0, 0, 0);
             materialComboBox1.FormattingEnabled = true;
+            materialComboBox1.Hint = "Language";
             materialComboBox1.IntegralHeight = false;
             materialComboBox1.ItemHeight = 43;
-            materialComboBox1.Location = new Point(228, 77);
+            materialComboBox1.Location = new Point(165, 219);
             materialComboBox1.MaxDropDownItems = 4;
             materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
             materialComboBox1.Name = "materialComboBox1";
@@ -182,11 +188,21 @@
             // 
             lbl_language.AutoSize = true;
             lbl_language.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_language.Location = new Point(46, 90);
+            lbl_language.Location = new Point(43, 234);
             lbl_language.Name = "lbl_language";
             lbl_language.Size = new Size(116, 24);
             lbl_language.TabIndex = 0;
             lbl_language.Text = "Language : ";
+            // 
+            // lbl_title
+            // 
+            lbl_title.AutoSize = true;
+            lbl_title.Font = new Font("Segoe UI Historic", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_title.Location = new Point(212, 28);
+            lbl_title.Name = "lbl_title";
+            lbl_title.Size = new Size(214, 38);
+            lbl_title.TabIndex = 6;
+            lbl_title.Text = "add a new word";
             // 
             // Add_word
             // 
@@ -213,5 +229,6 @@
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private PictureBox pictureBox1;
+        private Label lbl_title;
     }
 }

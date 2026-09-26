@@ -10,6 +10,10 @@ namespace wordz.src.dbContext
         {
 
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder); // later will configure this
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
