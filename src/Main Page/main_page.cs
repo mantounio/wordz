@@ -11,6 +11,16 @@ namespace wordz.src.Main_Page
         public main_page()
         {
             InitializeComponent();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = (from i in Util.db.words
+                                        select new
+                                        {
+                                            i._Word,
+                                            i.Meaning,
+                                            i.AddedTime,
+                                            i.Lang
+                                        }).ToList();
+
         }
 
         // main events
@@ -28,7 +38,7 @@ namespace wordz.src.Main_Page
 
             if (!Util.isTableCreated())
             {
-                foreach(var control in Util.arr_controls)
+                foreach (var control in Util.arr_controls)
                 {
                     control.BackColor = Color.FromArgb(230, 0, 0);
                 }
@@ -38,7 +48,7 @@ namespace wordz.src.Main_Page
             }
             else
             {
-               
+
             }
         }
     }

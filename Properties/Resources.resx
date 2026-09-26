@@ -166,6 +166,9 @@
   <data name="vector_error_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vecteezy_error-illustration-design_47412607.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="word_to_word_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-arrow-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="yellow_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yellow_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

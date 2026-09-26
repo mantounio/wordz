@@ -33,6 +33,8 @@
             btn_setting = new Button();
             btn_wordslist = new Button();
             lbl_title = new Label();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // btn_takequiz
@@ -100,11 +102,21 @@
             lbl_title.TabIndex = 5;
             lbl_title.Text = "•Wordz";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(18, 343);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(505, 318);
+            dataGridView1.TabIndex = 6;
+            // 
             // main_page
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
+            Controls.Add(dataGridView1);
             Controls.Add(lbl_title);
             Controls.Add(btn_setting);
             Controls.Add(btn_wordslist);
@@ -113,6 +125,7 @@
             Name = "main_page";
             Size = new Size(980, 681);
             Click += main_page_Click;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -124,5 +137,6 @@
         private Button btn_setting;
         private Button btn_wordslist;
         private Label lbl_title;
+        private DataGridView dataGridView1;
     }
 }

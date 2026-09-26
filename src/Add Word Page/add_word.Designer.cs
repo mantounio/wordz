@@ -30,6 +30,7 @@
         {
             button3 = new Button();
             materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            pictureBox1 = new PictureBox();
             materialButton2 = new MaterialSkin.Controls.MaterialButton();
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
             materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
@@ -37,6 +38,7 @@
             materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
             lbl_language = new Label();
             materialCard1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button3
@@ -54,6 +56,7 @@
             // materialCard1
             // 
             materialCard1.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard1.Controls.Add(pictureBox1);
             materialCard1.Controls.Add(materialButton2);
             materialCard1.Controls.Add(materialButton1);
             materialCard1.Controls.Add(materialTextBox2);
@@ -70,6 +73,16 @@
             materialCard1.Size = new Size(638, 403);
             materialCard1.TabIndex = 4;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.word_to_word_50px;
+            pictureBox1.Location = new Point(294, 176);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(50, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // materialButton2
             // 
             materialButton2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -77,7 +90,7 @@
             materialButton2.Depth = 0;
             materialButton2.HighEmphasis = true;
             materialButton2.Icon = null;
-            materialButton2.Location = new Point(455, 356);
+            materialButton2.Location = new Point(484, 356);
             materialButton2.Margin = new Padding(4, 6, 4, 6);
             materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton2.Name = "materialButton2";
@@ -96,7 +109,7 @@
             materialButton1.Depth = 0;
             materialButton1.HighEmphasis = true;
             materialButton1.Icon = null;
-            materialButton1.Location = new Point(527, 356);
+            materialButton1.Location = new Point(556, 356);
             materialButton1.Margin = new Padding(4, 6, 4, 6);
             materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton1.Name = "materialButton1";
@@ -107,6 +120,7 @@
             materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton1.UseAccentColor = false;
             materialButton1.UseVisualStyleBackColor = true;
+            materialButton1.Click += materialButton1_Click;
             // 
             // materialTextBox2
             // 
@@ -115,7 +129,7 @@
             materialTextBox2.Depth = 0;
             materialTextBox2.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialTextBox2.LeadingIcon = null;
-            materialTextBox2.Location = new Point(387, 196);
+            materialTextBox2.Location = new Point(387, 176);
             materialTextBox2.MaxLength = 50;
             materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
             materialTextBox2.Multiline = false;
@@ -132,7 +146,7 @@
             materialTextBox1.Depth = 0;
             materialTextBox1.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialTextBox1.LeadingIcon = null;
-            materialTextBox1.Location = new Point(46, 196);
+            materialTextBox1.Location = new Point(46, 176);
             materialTextBox1.MaxLength = 50;
             materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
             materialTextBox1.Multiline = false;
@@ -156,7 +170,7 @@
             materialComboBox1.FormattingEnabled = true;
             materialComboBox1.IntegralHeight = false;
             materialComboBox1.ItemHeight = 43;
-            materialComboBox1.Location = new Point(216, 77);
+            materialComboBox1.Location = new Point(228, 77);
             materialComboBox1.MaxDropDownItems = 4;
             materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
             materialComboBox1.Name = "materialComboBox1";
@@ -185,6 +199,7 @@
             Size = new Size(980, 681);
             materialCard1.ResumeLayout(false);
             materialCard1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -197,5 +212,6 @@
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialButton materialButton1;
+        private PictureBox pictureBox1;
     }
 }

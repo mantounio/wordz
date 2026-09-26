@@ -1,7 +1,7 @@
 ﻿using wordz.src.Repository;
 using wordz.src.words;
 
-namespace wordz.WordService
+namespace wordz.service
 {
     public class WordService
     {

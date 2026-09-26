@@ -2,6 +2,8 @@
 using wordz.src.dbContext;
 using wordz.src.Repository;
 using wordz.src.words;
+using wordz.service;
+
 
 namespace wordz.src.add_word
 {
@@ -10,23 +12,33 @@ namespace wordz.src.add_word
         public Add_word()
         {
             InitializeComponent();
+            materialComboBox1.Items.AddRange(Util.language_items.ToArray());
         }
         private void button2_Click(object sender, EventArgs e)
         {
-           /* Word word1 = new words.Word
-            {
-                entry = "hello",
-                meaning = "salam",
-                addedTime = DateTime.Now,
-                lang = Langs.ENGLISH
-            };
-            Util.db.Database.EnsureCreatedAsync();
-
-            Util.db.words.Add(word1);
-            Util.db.SaveChanges();*/
+          
         }
 
         private void button3_Click(object sender, EventArgs e) => Util.Page_BackWard();
 
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            IRepository repository = new WordsRepository(Util.db);
+            WordService words = new(repository);
+
+            Util.db.Database.EnsureCreatedAsync();
+
+            words.CreateWord(new words.Word
+            {
+                _Word = materialTextBox1.Text.TrimEnd().Trim().TrimStart(),
+                Meaning = materialTextBox2.Text.TrimEnd().Trim().TrimStart(),
+                AddedTime = DateTime.Now,
+                Lang = Enum.Parse<Langs>(materialComboBox1.SelectedItem.ToString())
+            });
+
+            Util.db.SaveChangesAsync();
+
+
+        }
     }
 }

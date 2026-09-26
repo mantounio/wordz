@@ -25,7 +25,7 @@ public static class Util
     public static bool isErrorPageVisible = false;
     public static Control[] arr_controls;
     public static Label error_lbl;
-    public static List<string> language_items
+    public static List<string> language_items // change this later to have languages and custom collection
     {
         get
         {
