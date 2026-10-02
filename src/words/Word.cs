@@ -8,7 +8,7 @@ namespace wordz.src.words
         {
             // there is nothing here...?
         }
-        public Word(string Word,string Meaning,DateTime AddedTime,Langs Lang = Langs.ENGLISH)
+        public Word(string Word,string Meaning,DateTime AddedTime,Langs Lang = Langs.EMPTY)
         {
             _Word = Word;
             this.Meaning = Meaning;

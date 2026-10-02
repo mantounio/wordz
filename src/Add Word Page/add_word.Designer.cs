@@ -30,14 +30,14 @@
         {
             button3 = new Button();
             materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            lbl_title = new Label();
             pictureBox1 = new PictureBox();
             materialButton2 = new MaterialSkin.Controls.MaterialButton();
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
-            materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
-            materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
+            txt_meaning = new MaterialSkin.Controls.MaterialTextBox();
+            txt_word = new MaterialSkin.Controls.MaterialTextBox();
+            combo_lang = new MaterialSkin.Controls.MaterialComboBox();
             lbl_language = new Label();
-            lbl_title = new Label();
             materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -61,9 +61,9 @@
             materialCard1.Controls.Add(pictureBox1);
             materialCard1.Controls.Add(materialButton2);
             materialCard1.Controls.Add(materialButton1);
-            materialCard1.Controls.Add(materialTextBox2);
-            materialCard1.Controls.Add(materialTextBox1);
-            materialCard1.Controls.Add(materialComboBox1);
+            materialCard1.Controls.Add(txt_meaning);
+            materialCard1.Controls.Add(txt_word);
+            materialCard1.Controls.Add(combo_lang);
             materialCard1.Controls.Add(lbl_language);
             materialCard1.Depth = 0;
             materialCard1.ForeColor = Color.FromArgb(222, 0, 0, 0);
@@ -74,11 +74,22 @@
             materialCard1.Padding = new Padding(14);
             materialCard1.Size = new Size(638, 403);
             materialCard1.TabIndex = 4;
+            materialCard1.Click += materialCard1_Click;
+            // 
+            // lbl_title
+            // 
+            lbl_title.AutoSize = true;
+            lbl_title.Font = new Font("Segoe UI Historic", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_title.Location = new Point(212, 28);
+            lbl_title.Name = "lbl_title";
+            lbl_title.Size = new Size(214, 38);
+            lbl_title.TabIndex = 6;
+            lbl_title.Text = "add a new word";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.word_to_word_50px;
-            pictureBox1.Location = new Point(299, 115);
+            pictureBox1.Location = new Point(294, 115);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(50, 50);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -124,65 +135,70 @@
             materialButton1.UseVisualStyleBackColor = true;
             materialButton1.Click += materialButton1_Click;
             // 
-            // materialTextBox2
+            // txt_meaning
             // 
-            materialTextBox2.AnimateReadOnly = false;
-            materialTextBox2.BorderStyle = BorderStyle.None;
-            materialTextBox2.Depth = 0;
-            materialTextBox2.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox2.Hint = "Meaning";
-            materialTextBox2.LeadingIcon = null;
-            materialTextBox2.Location = new Point(392, 115);
-            materialTextBox2.MaxLength = 50;
-            materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox2.Multiline = false;
-            materialTextBox2.Name = "materialTextBox2";
-            materialTextBox2.Size = new Size(204, 50);
-            materialTextBox2.TabIndex = 4;
-            materialTextBox2.Text = "";
-            materialTextBox2.TrailingIcon = null;
-            materialTextBox2.UseAccent = false;
+            txt_meaning.AnimateReadOnly = false;
+            txt_meaning.BorderStyle = BorderStyle.None;
+            txt_meaning.Depth = 0;
+            txt_meaning.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_meaning.Hint = "Meaning";
+            txt_meaning.LeadingIcon = null;
+            txt_meaning.Location = new Point(381, 115);
+            txt_meaning.MaxLength = 50;
+            txt_meaning.MouseState = MaterialSkin.MouseState.OUT;
+            txt_meaning.Multiline = false;
+            txt_meaning.Name = "txt_meaning";
+            txt_meaning.Size = new Size(204, 50);
+            txt_meaning.TabIndex = 4;
+            txt_meaning.Tag = "meaning";
+            txt_meaning.Text = "";
+            txt_meaning.TrailingIcon = null;
+            txt_meaning.UseAccent = false;
             // 
-            // materialTextBox1
+            // txt_word
             // 
-            materialTextBox1.AnimateReadOnly = false;
-            materialTextBox1.BorderStyle = BorderStyle.None;
-            materialTextBox1.Depth = 0;
-            materialTextBox1.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox1.Hint = "Word";
-            materialTextBox1.LeadingIcon = null;
-            materialTextBox1.Location = new Point(51, 115);
-            materialTextBox1.MaxLength = 50;
-            materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox1.Multiline = false;
-            materialTextBox1.Name = "materialTextBox1";
-            materialTextBox1.Size = new Size(204, 50);
-            materialTextBox1.TabIndex = 3;
-            materialTextBox1.Text = "";
-            materialTextBox1.TrailingIcon = null;
+            txt_word.AnimateReadOnly = false;
+            txt_word.BorderStyle = BorderStyle.None;
+            txt_word.Depth = 0;
+            txt_word.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_word.Hint = "Word";
+            txt_word.LeadingIcon = null;
+            txt_word.Location = new Point(51, 115);
+            txt_word.MaxLength = 50;
+            txt_word.MouseState = MaterialSkin.MouseState.OUT;
+            txt_word.Multiline = false;
+            txt_word.Name = "txt_word";
+            txt_word.Size = new Size(204, 50);
+            txt_word.TabIndex = 3;
+            txt_word.Tag = "word";
+            txt_word.Text = "";
+            txt_word.TrailingIcon = null;
+            txt_word.UseAccent = false;
             // 
-            // materialComboBox1
+            // combo_lang
             // 
-            materialComboBox1.AutoResize = false;
-            materialComboBox1.BackColor = Color.FromArgb(255, 255, 255);
-            materialComboBox1.Depth = 0;
-            materialComboBox1.DrawMode = DrawMode.OwnerDrawVariable;
-            materialComboBox1.DropDownHeight = 174;
-            materialComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            materialComboBox1.DropDownWidth = 121;
-            materialComboBox1.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            materialComboBox1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialComboBox1.FormattingEnabled = true;
-            materialComboBox1.Hint = "Language";
-            materialComboBox1.IntegralHeight = false;
-            materialComboBox1.ItemHeight = 43;
-            materialComboBox1.Location = new Point(165, 219);
-            materialComboBox1.MaxDropDownItems = 4;
-            materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
-            materialComboBox1.Name = "materialComboBox1";
-            materialComboBox1.Size = new Size(182, 49);
-            materialComboBox1.StartIndex = 0;
-            materialComboBox1.TabIndex = 2;
+            combo_lang.AutoResize = false;
+            combo_lang.BackColor = Color.FromArgb(255, 255, 255);
+            combo_lang.Depth = 0;
+            combo_lang.DrawMode = DrawMode.OwnerDrawVariable;
+            combo_lang.DropDownHeight = 174;
+            combo_lang.DropDownStyle = ComboBoxStyle.DropDownList;
+            combo_lang.DropDownWidth = 121;
+            combo_lang.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            combo_lang.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            combo_lang.FormattingEnabled = true;
+            combo_lang.Hint = "Language";
+            combo_lang.IntegralHeight = false;
+            combo_lang.ItemHeight = 43;
+            combo_lang.Location = new Point(165, 219);
+            combo_lang.MaxDropDownItems = 4;
+            combo_lang.MouseState = MaterialSkin.MouseState.OUT;
+            combo_lang.Name = "combo_lang";
+            combo_lang.Size = new Size(182, 49);
+            combo_lang.StartIndex = 0;
+            combo_lang.TabIndex = 2;
+            combo_lang.Tag = "language";
+            combo_lang.UseAccent = false;
             // 
             // lbl_language
             // 
@@ -194,16 +210,6 @@
             lbl_language.TabIndex = 0;
             lbl_language.Text = "Language : ";
             // 
-            // lbl_title
-            // 
-            lbl_title.AutoSize = true;
-            lbl_title.Font = new Font("Segoe UI Historic", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_title.Location = new Point(212, 28);
-            lbl_title.Name = "lbl_title";
-            lbl_title.Size = new Size(214, 38);
-            lbl_title.TabIndex = 6;
-            lbl_title.Text = "add a new word";
-            // 
             // Add_word
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -213,6 +219,7 @@
             Controls.Add(button3);
             Name = "Add_word";
             Size = new Size(980, 681);
+            Click += Add_word_Click;
             materialCard1.ResumeLayout(false);
             materialCard1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -222,10 +229,10 @@
         #endregion
         private Button button3;
         private MaterialSkin.Controls.MaterialCard materialCard1;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
+        private MaterialSkin.Controls.MaterialComboBox combo_lang;
         private Label lbl_language;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialTextBox txt_meaning;
+        private MaterialSkin.Controls.MaterialTextBox txt_word;
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private PictureBox pictureBox1;

@@ -7,5 +7,6 @@
     JAPANESE,
     ITALIAN,
     SPANISH,
+    EMPTY,
     // FOR NOW THESE ARE ENOUGH
 }

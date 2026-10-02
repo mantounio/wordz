@@ -1,30 +1,37 @@
-﻿using MaterialSkin.Controls;
-using System.Text.RegularExpressions;
-using wordz.src.dbContext;
+﻿using MaterialSkin;
+using src.errortype;
 using wordz.src.Repository;
 using wordz.src.words;
-using wordz.src.WordService;
+using static Page_OPT;
+using static src.errortype.ErrorType;
 
 
 namespace wordz.src.add_word
 {
     public partial class Add_word : UserControl
     {
-        // methods
-        public bool Validate(Word w)
+        public void validate(Word w)
         {
-            if (!Regex.IsMatch(w._Word, @"^[\x00-\x7F]{0,30}$"))
-            {
-                MessageBox.Show("errorrorooro");
-                return false;
-            }
-            return true;
+            string msg = string.Empty;
+            if (string.IsNullOrWhiteSpace(w._Word))
+                msg = "Please fill the word you want to add!";
+            if (string.IsNullOrWhiteSpace(w.Meaning))
+                msg = "Please fill a meaning for this word!";
+            if (w.Lang == Langs.EMPTY)
+                msg = "Please select the language of this word!";
+
+            Util.isErrorPageVisible = true;
+            Util.CreatePage(ERROR, Util.control_container);
+            Util.set_error($"Can't add the word : \n{msg}");
+            
         }
         public Add_word()
         {
             InitializeComponent();
-            materialComboBox1.Items.AddRange(Util.language_items.ToArray());
+            combo_lang.Items.AddRange(Util.language_items.ToArray());
         }
+
+        // events
 
         private void button3_Click(object sender, EventArgs e) => Util.Page_BackWard();
 
@@ -33,24 +40,35 @@ namespace wordz.src.add_word
             IRepository repository = new WordsRepository(Util.db);
             WordService.WordService words = new(repository);
 
-            Util.db.Database.EnsureCreated();
+            Util.db.Database.EnsureCreated(); // move this to somewhere better
 
-        /*    words.CreateWord(new words.Word
+            Word word = new()
             {
-                _Word = materialTextBox1.Text.TrimEnd().Trim().TrimStart(),
-                Meaning = materialTextBox2.Text.TrimEnd().Trim().TrimStart(),
+                _Word = txt_word.Text.TrimEnd().Trim().TrimStart(),
+                Meaning = txt_meaning.Text.TrimEnd().Trim().TrimStart(),
                 AddedTime = DateTime.Now,
-                Lang = Enum.Parse<Langs>(materialComboBox1.SelectedItem!.ToString()!)
-            });*/
+                Lang = Enum.Parse<Langs>(combo_lang.SelectedItem!.ToString()!)
+            };
 
-            //Util.db.SaveChangesAsync();
-            Validate(new words.Word
+            validate(word);
+        }
+/*
+            words.CreateWord(new words.Word
             {
                 _Word = materialTextBox1.Text.TrimEnd().Trim().TrimStart(),
                 Meaning = materialTextBox2.Text.TrimEnd().Trim().TrimStart(),
                 AddedTime = DateTime.Now,
                 Lang = Enum.Parse<Langs>(materialComboBox1.SelectedItem!.ToString()!)
             });
-        }
+
+            Util.db.SaveChangesAsync();*/
+        
+
+        
+
+        private void materialCard1_Click(object sender, EventArgs e) => ActiveControl = null;
+
+        private void Add_word_Click(object sender, EventArgs e) => ActiveControl = null;
+
     }
 }
