@@ -14,52 +14,70 @@ namespace wordz.src.add_word
         public void validate(Word w) // (refactor this later!!!!!!!
                                      // find a better solution for this is a bad approach!!!)
         {
+            bool err = false;
+
+            // write tests for every combination of words
             string msg = string.Empty;
             if (string.IsNullOrWhiteSpace(w._Word) && 
                 string.IsNullOrWhiteSpace(w.Meaning) &&
                 w.Lang == EMPTY)
             {
                 msg = "Please fill in all required fields!";
+                err = true;
             }
 
             else if(string.IsNullOrWhiteSpace(w._Word) &&
                 string.IsNullOrWhiteSpace(w.Meaning))
             {
                 msg = "Please enter a word and its meaning!";
+                err = true;
             }
 
             else if(string.IsNullOrWhiteSpace(w._Word) &&
                  w.Lang == EMPTY)
             {
                 msg = "Please enter a word and select its language!";
+                err = true;
             }
             else if (string.IsNullOrWhiteSpace(w.Meaning) &&
                 w.Lang == EMPTY)
             {
                 msg = "Please enter a meaning and select its language!";
+                err = true;
             }
 
             else if (string.IsNullOrWhiteSpace(w._Word))
-                msg = "Please fill the word you want to add!";
-
-            else if (string.IsNullOrWhiteSpace(w.Meaning))
-                msg = "Please fill a meaning for this word!";
-
-           
-            else if (w.Lang == EMPTY)
-                msg = "Please select the language of this word!";
-
-            foreach (var control in Util.arr_controls)
             {
-                control.BackColor = Color.FromArgb(230, 0, 0);
+                msg = "Please fill the word you want to add!";
+                err = true;
+            }
+              
+            else if (string.IsNullOrWhiteSpace(w.Meaning))
+            {
+                msg = "Please fill a meaning for this word!";
+                err = true;
+            }
+              
+            else if (w.Lang == EMPTY)
+            {
+                msg = "Please select the language of this word!";
+                err = true;
+            }
+                
+            if (err)
+            {
+                foreach (var control in Util.arr_controls)
+                {
+                    control.BackColor = Color.FromArgb(230, 0, 0);
+                }
+                Util.isErrorPageVisible = true;
+
+                Util.CreatePage(ERROR, Util.control_container);
+
+                Util.set_error($"Can't add the word \n{msg}");
             }
 
-            Util.isErrorPageVisible = true;
-
-            Util.CreatePage(ERROR, Util.control_container);
-
-            Util.set_error($"Can't add the word \n{msg}");
-            
+            return;
         }
         public Add_word()
         {
