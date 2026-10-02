@@ -11,6 +11,7 @@ namespace wordz.src.Repository
 
         public void Add(Word word)
         {
+            _context.Database.EnsureCreated();
             _context.Set<Word>().Add(word);
             _context.SaveChanges();
         }

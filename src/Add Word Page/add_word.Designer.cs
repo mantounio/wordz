@@ -32,8 +32,8 @@
             materialCard1 = new MaterialSkin.Controls.MaterialCard();
             lbl_title = new Label();
             pictureBox1 = new PictureBox();
-            materialButton2 = new MaterialSkin.Controls.MaterialButton();
-            materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            btn_clear = new MaterialSkin.Controls.MaterialButton();
+            btn_add = new MaterialSkin.Controls.MaterialButton();
             txt_meaning = new MaterialSkin.Controls.MaterialTextBox();
             txt_word = new MaterialSkin.Controls.MaterialTextBox();
             combo_lang = new MaterialSkin.Controls.MaterialComboBox();
@@ -59,8 +59,8 @@
             materialCard1.BackColor = Color.FromArgb(255, 255, 255);
             materialCard1.Controls.Add(lbl_title);
             materialCard1.Controls.Add(pictureBox1);
-            materialCard1.Controls.Add(materialButton2);
-            materialCard1.Controls.Add(materialButton1);
+            materialCard1.Controls.Add(btn_clear);
+            materialCard1.Controls.Add(btn_add);
             materialCard1.Controls.Add(txt_meaning);
             materialCard1.Controls.Add(txt_word);
             materialCard1.Controls.Add(combo_lang);
@@ -96,44 +96,45 @@
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
-            // materialButton2
+            // btn_clear
             // 
-            materialButton2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            materialButton2.Depth = 0;
-            materialButton2.HighEmphasis = true;
-            materialButton2.Icon = null;
-            materialButton2.Location = new Point(484, 356);
-            materialButton2.Margin = new Padding(4, 6, 4, 6);
-            materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            materialButton2.Name = "materialButton2";
-            materialButton2.NoAccentTextColor = Color.Empty;
-            materialButton2.Size = new Size(64, 36);
-            materialButton2.TabIndex = 6;
-            materialButton2.Text = "add";
-            materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            materialButton2.UseAccentColor = false;
-            materialButton2.UseVisualStyleBackColor = true;
+            btn_clear.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_clear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_clear.Depth = 0;
+            btn_clear.HighEmphasis = true;
+            btn_clear.Icon = null;
+            btn_clear.Location = new Point(484, 356);
+            btn_clear.Margin = new Padding(4, 6, 4, 6);
+            btn_clear.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_clear.Name = "btn_clear";
+            btn_clear.NoAccentTextColor = Color.Empty;
+            btn_clear.Size = new Size(64, 36);
+            btn_clear.TabIndex = 6;
+            btn_clear.Text = "clear";
+            btn_clear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_clear.UseAccentColor = false;
+            btn_clear.UseVisualStyleBackColor = true;
+            btn_clear.Click += btn_clear_Click;
             // 
-            // materialButton1
+            // btn_add
             // 
-            materialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            materialButton1.Depth = 0;
-            materialButton1.HighEmphasis = true;
-            materialButton1.Icon = null;
-            materialButton1.Location = new Point(556, 356);
-            materialButton1.Margin = new Padding(4, 6, 4, 6);
-            materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialButton1.Name = "materialButton1";
-            materialButton1.NoAccentTextColor = Color.Empty;
-            materialButton1.Size = new Size(64, 36);
-            materialButton1.TabIndex = 5;
-            materialButton1.Text = "add";
-            materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            materialButton1.UseAccentColor = false;
-            materialButton1.UseVisualStyleBackColor = true;
-            materialButton1.Click += materialButton1_Click;
+            btn_add.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_add.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_add.Depth = 0;
+            btn_add.HighEmphasis = true;
+            btn_add.Icon = null;
+            btn_add.Location = new Point(556, 356);
+            btn_add.Margin = new Padding(4, 6, 4, 6);
+            btn_add.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_add.Name = "btn_add";
+            btn_add.NoAccentTextColor = Color.Empty;
+            btn_add.Size = new Size(64, 36);
+            btn_add.TabIndex = 5;
+            btn_add.Text = "add";
+            btn_add.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_add.UseAccentColor = false;
+            btn_add.UseVisualStyleBackColor = true;
+            btn_add.Click += materialButton1_Click;
             // 
             // txt_meaning
             // 
@@ -233,8 +234,8 @@
         private Label lbl_language;
         private MaterialSkin.Controls.MaterialTextBox txt_meaning;
         private MaterialSkin.Controls.MaterialTextBox txt_word;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialButton btn_clear;
+        private MaterialSkin.Controls.MaterialButton btn_add;
         private PictureBox pictureBox1;
         private Label lbl_title;
     }

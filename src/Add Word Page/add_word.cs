@@ -18,7 +18,7 @@ namespace wordz.src.add_word
 
             // write tests for every combination of words
             string msg = string.Empty;
-            if (string.IsNullOrWhiteSpace(w._Word) && 
+            if (string.IsNullOrWhiteSpace(w._Word) &&
                 string.IsNullOrWhiteSpace(w.Meaning) &&
                 w.Lang == EMPTY)
             {
@@ -26,14 +26,14 @@ namespace wordz.src.add_word
                 err = true;
             }
 
-            else if(string.IsNullOrWhiteSpace(w._Word) &&
+            else if (string.IsNullOrWhiteSpace(w._Word) &&
                 string.IsNullOrWhiteSpace(w.Meaning))
             {
                 msg = "Please enter a word and its meaning!";
                 err = true;
             }
 
-            else if(string.IsNullOrWhiteSpace(w._Word) &&
+            else if (string.IsNullOrWhiteSpace(w._Word) &&
                  w.Lang == EMPTY)
             {
                 msg = "Please enter a word and select its language!";
@@ -51,19 +51,19 @@ namespace wordz.src.add_word
                 msg = "Please fill the word you want to add!";
                 err = true;
             }
-              
+
             else if (string.IsNullOrWhiteSpace(w.Meaning))
             {
                 msg = "Please fill a meaning for this word!";
                 err = true;
             }
-              
+
             else if (w.Lang == EMPTY)
             {
                 msg = "Please select the language of this word!";
                 err = true;
             }
-                
+
             if (err)
             {
                 foreach (var control in Util.arr_controls)
@@ -95,8 +95,6 @@ namespace wordz.src.add_word
             IRepository repository = new WordsRepository(Util.db);
             WordService.WordService words = new(repository);
 
-            Util.db.Database.EnsureCreated(); // move this to somewhere better
-
             Word word = new()
             {
                 _Word = txt_word.Text.TrimEnd().Trim().TrimStart(),
@@ -106,24 +104,21 @@ namespace wordz.src.add_word
             };
 
             validate(word);
+
+
         }
-/*
-            words.CreateWord(new words.Word
-            {
-                _Word = materialTextBox1.Text.TrimEnd().Trim().TrimStart(),
-                Meaning = materialTextBox2.Text.TrimEnd().Trim().TrimStart(),
-                AddedTime = DateTime.Now,
-                Lang = Enum.Parse<Langs>(materialComboBox1.SelectedItem!.ToString()!)
-            });
 
-            Util.db.SaveChangesAsync();*/
-        
 
-        
+
 
         private void materialCard1_Click(object sender, EventArgs e) => ActiveControl = null;
 
         private void Add_word_Click(object sender, EventArgs e) => ActiveControl = null;
 
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            txt_meaning.Text = "";txt_word.Text = "";
+            combo_lang.SelectedIndex = 0;
+        }
     }
 }
