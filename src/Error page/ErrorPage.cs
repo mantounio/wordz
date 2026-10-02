@@ -7,6 +7,8 @@ namespace wordz.src.Error_page
         {
             InitializeComponent();
             Util.error_lbl = lbl_msg;
+
+            if (!Util.show_label) link_lbl_redirect_add_word.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)

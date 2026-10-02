@@ -1,5 +1,6 @@
 ﻿public enum Langs 
 {
+    EMPTY,
     PERSIAN,
     ENGLISH,
     GERMAN,
@@ -7,6 +8,5 @@
     JAPANESE,
     ITALIAN,
     SPANISH,
-    EMPTY,
     // FOR NOW THESE ARE ENOUGH
 }

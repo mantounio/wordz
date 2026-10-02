@@ -25,6 +25,7 @@ public static class Util
     public static bool isErrorPageVisible = false;
     public static Control[] arr_controls;
     public static Label error_lbl;
+    public static bool show_label;
     public static List<string> language_items // change this later to have languages and custom collection
     {
         get
@@ -32,6 +33,7 @@ public static class Util
             return Enum.GetNames<Langs>().ToList();
         }
     }
+
     
     // methods
     public static void Push_window(UserControl usercontrol) => WINDPTR.Push(usercontrol);

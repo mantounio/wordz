@@ -4,31 +4,50 @@ using wordz.src.Repository;
 using wordz.src.words;
 using static Page_OPT;
 using static src.errortype.ErrorType;
+using static Langs;
 
 
 namespace wordz.src.add_word
 {
     public partial class Add_word : UserControl
     {
-        public void validate(Word w)
+        public void validate(Word w) // refactor this later
         {
             string msg = string.Empty;
-            if (string.IsNullOrWhiteSpace(w._Word))
+            if (string.IsNullOrWhiteSpace(w._Word) && 
+                string.IsNullOrWhiteSpace(w.Meaning) &&
+                w.Lang == EMPTY)
+            {
+                msg = "Please fill in all required fields.";
+            }
+
+            else if (string.IsNullOrWhiteSpace(w._Word))
                 msg = "Please fill the word you want to add!";
-            if (string.IsNullOrWhiteSpace(w.Meaning))
+
+            else if (string.IsNullOrWhiteSpace(w.Meaning))
                 msg = "Please fill a meaning for this word!";
-            if (w.Lang == Langs.EMPTY)
+
+           
+            else if (w.Lang == EMPTY)
                 msg = "Please select the language of this word!";
 
+            foreach (var control in Util.arr_controls)
+            {
+                control.BackColor = Color.FromArgb(230, 0, 0);
+            }
+
             Util.isErrorPageVisible = true;
+
             Util.CreatePage(ERROR, Util.control_container);
-            Util.set_error($"Can't add the word : \n{msg}");
+
+            Util.set_error($"Can't add the word \n{msg}");
             
         }
         public Add_word()
         {
             InitializeComponent();
             combo_lang.Items.AddRange(Util.language_items.ToArray());
+            combo_lang.SelectedIndex = 0;
         }
 
         // events
