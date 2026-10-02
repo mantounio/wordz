@@ -11,14 +11,32 @@ namespace wordz.src.add_word
 {
     public partial class Add_word : UserControl
     {
-        public void validate(Word w) // refactor this later
+        public void validate(Word w) // (refactor this later!!!!!!!
+                                     // find a better solution for this is a bad approach!!!)
         {
             string msg = string.Empty;
             if (string.IsNullOrWhiteSpace(w._Word) && 
                 string.IsNullOrWhiteSpace(w.Meaning) &&
                 w.Lang == EMPTY)
             {
-                msg = "Please fill in all required fields.";
+                msg = "Please fill in all required fields!";
+            }
+
+            else if(string.IsNullOrWhiteSpace(w._Word) &&
+                string.IsNullOrWhiteSpace(w.Meaning))
+            {
+                msg = "Please enter a word and its meaning!";
+            }
+
+            else if(string.IsNullOrWhiteSpace(w._Word) &&
+                 w.Lang == EMPTY)
+            {
+                msg = "Please enter a word and select its language!";
+            }
+            else if (string.IsNullOrWhiteSpace(w.Meaning) &&
+                w.Lang == EMPTY)
+            {
+                msg = "Please enter a meaning and select its language!";
             }
 
             else if (string.IsNullOrWhiteSpace(w._Word))
