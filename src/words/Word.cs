@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics.CodeAnalysis;
 
 namespace wordz.src.words
 {
-    //[Table("words")] 
+    [Table("words")] 
     public sealed class Word
     {
         public Word()
@@ -20,17 +19,17 @@ namespace wordz.src.words
             this.Lang = Lang;
         }
 
-        //[Key]
+        [Key]
         public int Id { get; set; }
-        //[Required]
-        //[MaxLength(100)]
+        [Required]
+        [MaxLength(100)]
         public string _Word { get; set; }
-        //[Required]
-        //[MaxLength(100)]
+        [Required]
+        [MaxLength(100)]
         public string Meaning { get; set; }
-        //[Required]
+        [Required]
         public DateTime AddedTime { get; set; }
-        //[Required]
+        [Required]
         public Langs Lang { get; set; }
     }
 }

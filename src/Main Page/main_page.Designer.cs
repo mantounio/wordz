@@ -89,6 +89,7 @@
             btn_wordslist.Text = "Words List";
             btn_wordslist.TextAlign = ContentAlignment.BottomCenter;
             btn_wordslist.UseVisualStyleBackColor = true;
+            btn_wordslist.Click += btn_wordslist_Click;
             // 
             // lbl_title
             // 

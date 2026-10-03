@@ -13,21 +13,21 @@ namespace wordz.src.Main_Page
             InitializeComponent();
             try
             {
-              /*  dataGridView1.DataSource = null;
-                dataGridView1.DataSource = (from i in Util.db.words
-                                            select new
-                                            {
-                                                i._Word,
-                                                i.Meaning,
-                                                i.AddedTime,
-                                                i.Lang
-                                            }).ToList();*/
+                /*  dataGridView1.DataSource = null;
+                  dataGridView1.DataSource = (from i in Util.db.words
+                                              select new
+                                              {
+                                                  i._Word,
+                                                  i.Meaning,
+                                                  i.AddedTime,
+                                                  i.Lang
+                                              }).ToList();*/
             }
             catch (Microsoft.Data.Sqlite.SqliteException)
             {
                 // do nothing for now
             }
-            
+
         }
 
         // main events
@@ -43,7 +43,7 @@ namespace wordz.src.Main_Page
         private void btn_takequiz_Click(object sender, EventArgs e)
         {
 
-            if (!Util.isTableCreated())
+            if (!Util.isTableCreated()) // make a single function
             {
                 foreach (var control in Util.arr_controls)
                 {
@@ -56,6 +56,24 @@ namespace wordz.src.Main_Page
             else
             {
 
+            }
+        }
+
+        private void btn_wordslist_Click(object sender, EventArgs e)
+        {
+            if (!Util.isTableCreated())
+            {
+                foreach (var control in Util.arr_controls)
+                {
+                    control.BackColor = Color.FromArgb(230, 0, 0);
+                }
+                Util.isErrorPageVisible = true;
+                Util.CreatePage(ERROR, Util.control_container);
+                Util.set_error("You need at least 1 word to take a quiz. Add a word to your list and try again!");
+            }
+            else
+            {
+                Util.CreatePage(WORDSLIST, Util.control_container);
             }
         }
     }

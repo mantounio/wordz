@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button3 = new Button();
+            btn_back = new Button();
             materialCard1 = new MaterialSkin.Controls.MaterialCard();
             lbl_title = new Label();
             pictureBox1 = new PictureBox();
@@ -42,17 +42,17 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // button3
+            // btn_back
             // 
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = SystemColors.Control;
-            button3.Image = Properties.Resources.back_50px;
-            button3.Location = new Point(25, 60);
-            button3.Name = "button3";
-            button3.Size = new Size(69, 52);
-            button3.TabIndex = 3;
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            btn_back.FlatStyle = FlatStyle.Flat;
+            btn_back.ForeColor = SystemColors.Control;
+            btn_back.Image = Properties.Resources.back_50px;
+            btn_back.Location = new Point(25, 60);
+            btn_back.Name = "btn_back";
+            btn_back.Size = new Size(69, 52);
+            btn_back.TabIndex = 3;
+            btn_back.UseVisualStyleBackColor = true;
+            btn_back.Click += button3_Click;
             // 
             // materialCard1
             // 
@@ -108,7 +108,7 @@
             btn_clear.MouseState = MaterialSkin.MouseState.HOVER;
             btn_clear.Name = "btn_clear";
             btn_clear.NoAccentTextColor = Color.Empty;
-            btn_clear.Size = new Size(64, 36);
+            btn_clear.Size = new Size(66, 36);
             btn_clear.TabIndex = 6;
             btn_clear.Text = "clear";
             btn_clear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -217,7 +217,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             Controls.Add(materialCard1);
-            Controls.Add(button3);
+            Controls.Add(btn_back);
             Name = "Add_word";
             Size = new Size(980, 681);
             Click += Add_word_Click;
@@ -228,7 +228,7 @@
         }
 
         #endregion
-        private Button button3;
+        private Button btn_back;
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialComboBox combo_lang;
         private Label lbl_language;

@@ -1,9 +1,6 @@
-﻿using MaterialSkin;
-using src.errortype;
-using wordz.src.Repository;
+﻿using wordz.src.Repository;
 using wordz.src.words;
 using static Page_OPT;
-using static src.errortype.ErrorType;
 using static Langs;
 
 
@@ -75,7 +72,6 @@ namespace wordz.src.add_word
                 Util.CreatePage(ERROR, Util.control_container);
 
                 Util.set_error($"Can't add the word \n{msg}");
-                
             }
 
             return err;

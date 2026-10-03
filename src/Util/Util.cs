@@ -2,6 +2,7 @@
 using wordz.src.dbContext;
 using wordz.src.Error_page;
 using wordz.src.Main_Page;
+using wordz.src.WordsList;
 using static Page_OPT;
 
 public enum Page_OPT
@@ -93,6 +94,13 @@ public static class Util
                     Name = "errorpage"
                 };
                 break;
+            case WORDSLIST:
+                page = new WordsList()
+                {
+                    Dock = DockStyle.Fill,
+                    Name = "wordslist"
+                };
+                break;
         }
         Push_window(page);
         page.SendToBack();
@@ -107,7 +115,6 @@ public static class Util
             item.BackColor = color;
         }
     }
-
     public static Control get_control(string item_name) => arr_controls.Where(c => c.Name == item_name).First();
 
     public static void set_error(string message) => error_lbl.Text = message;
