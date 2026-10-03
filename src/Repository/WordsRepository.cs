@@ -9,11 +9,11 @@ namespace wordz.src.Repository
 
         public WordsRepository(DbContext context) => _context = context;
 
-        public void Add(Word word)
+        public async void Add(Word word)
         {
             _context.Database.EnsureCreated();
-            _context.Set<Word>().AddAsync(word);
-            _context.SaveChangesAsync();
+            await _context.Set<Word>().AddAsync(word);
+            await _context.SaveChangesAsync();
         }
 
         public void Delete(Word word)
