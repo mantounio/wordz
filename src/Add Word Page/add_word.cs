@@ -11,7 +11,7 @@ namespace wordz.src.add_word
 {
     public partial class Add_word : UserControl
     {
-        public void validate(Word w) // (refactor this later!!!!!!!
+        public bool validate(Word w) // (refactor this later!!!!!!!
                                      // find a better solution for this is a bad approach!!!)
         {
             bool err = false;
@@ -75,9 +75,10 @@ namespace wordz.src.add_word
                 Util.CreatePage(ERROR, Util.control_container);
 
                 Util.set_error($"Can't add the word \n{msg}");
+                
             }
 
-            return;
+            return err;
         }
         public Add_word()
         {
@@ -85,7 +86,6 @@ namespace wordz.src.add_word
             combo_lang.Items.AddRange(Util.language_items.ToArray());
             combo_lang.SelectedIndex = 0;
         }
-
         // events
 
         private void button3_Click(object sender, EventArgs e) => Util.Page_BackWard();
@@ -93,7 +93,7 @@ namespace wordz.src.add_word
         private void materialButton1_Click(object sender, EventArgs e)
         {
             IRepository repository = new WordsRepository(Util.db);
-            WordService.WordService words = new(repository);
+            WordService.WordService service = new(repository);
 
             Word word = new()
             {
@@ -103,13 +103,10 @@ namespace wordz.src.add_word
                 Lang = Enum.Parse<Langs>(combo_lang.SelectedItem!.ToString()!)
             };
 
-            validate(word);
+            if (validate(word)) return;
 
-
+            service.CreateWord(word);
         }
-
-
-
 
         private void materialCard1_Click(object sender, EventArgs e) => ActiveControl = null;
 

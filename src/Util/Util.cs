@@ -102,7 +102,7 @@ public static class Util
 
     public static void change_colors(Color color, params Control[] controls)
     {
-        foreach (var item in controls)
+        foreach(var item in controls)
         {
             item.BackColor = color;
         }

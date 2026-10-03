@@ -51,7 +51,7 @@ namespace wordz.src.Main_Page
                 }
                 Util.isErrorPageVisible = true;
                 Util.CreatePage(ERROR, Util.control_container);
-                Util.set_error("You need at least 10 words in your list to take a quiz. Add some more words and try again!");
+                Util.set_error("You need at least 1 word to take a quiz. Add a word to your list and try again!");
             }
             else
             {

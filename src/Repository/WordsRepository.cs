@@ -12,8 +12,8 @@ namespace wordz.src.Repository
         public void Add(Word word)
         {
             _context.Database.EnsureCreated();
-            _context.Set<Word>().Add(word);
-            _context.SaveChanges();
+            _context.Set<Word>().AddAsync(word);
+            _context.SaveChangesAsync();
         }
 
         public void Delete(Word word)
