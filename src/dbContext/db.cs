@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 using wordz.src.words;
 
 namespace wordz.src.dbContext
@@ -12,7 +13,10 @@ namespace wordz.src.dbContext
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder); // later will configure this
+            modelBuilder.Entity<Word>()
+                 .HasIndex(i => new {i.Id,i._Word,i.Meaning,})
+                 .IsUnique();
+            
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
