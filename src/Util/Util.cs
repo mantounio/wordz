@@ -118,5 +118,20 @@ public static class Util
     public static Control get_control(string item_name) => arr_controls.Where(c => c.Name == item_name).First();
 
     public static void set_error(string message) => error_lbl.Text = message;
+
+    public static void show_error(string msg)
+    {
+        foreach (var control in arr_controls)
+        {
+            control.BackColor = Color.FromArgb(230, 0, 0);
+        }
+        isErrorPageVisible = true;
+
+        CreatePage(ERROR, control_container);
+        
+        set_error(msg);
+    }
+
+    
 }
 

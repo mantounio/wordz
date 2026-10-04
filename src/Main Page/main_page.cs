@@ -42,17 +42,8 @@ namespace wordz.src.Main_Page
 
         private void btn_takequiz_Click(object sender, EventArgs e)
         {
-
-            if (!Util.isTableCreated()) // make a single function
-            {
-                foreach (var control in Util.arr_controls)
-                {
-                    control.BackColor = Color.FromArgb(230, 0, 0);
-                }
-                Util.isErrorPageVisible = true;
-                Util.CreatePage(ERROR, Util.control_container);
-                Util.set_error("You need at least 1 word to take a quiz. Add a word to your list and try again!");
-            }
+            if (!Util.isTableCreated())
+                Util.show_error("You need at least 1 word to take a quiz. Add a word to your list and try again!");
             else
             {
 

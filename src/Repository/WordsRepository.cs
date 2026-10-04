@@ -11,17 +11,9 @@ namespace wordz.src.Repository
 
         public async void Add(Word word)
         {
-            if (await _context.Set<Word>().AnyAsync(i => i._Word == word._Word && i.Meaning == word.Meaning))
+            if (await _context.Set<Word>().AnyAsync(i => i._Word == word._Word && i.Meaning == word.Meaning && i.Lang == word.Lang))
             {
-                foreach (var control in Util.arr_controls) // refactor this later with a single method
-                {
-                    control.BackColor = Color.FromArgb(230, 0, 0);
-                }
-                Util.isErrorPageVisible = true;
-
-                Util.CreatePage(Page_OPT.ERROR, Util.control_container);
-
-                Util.set_error($"This word already exists with the same meaning and language!!!");
+                Util.show_error("This word already exists with the same meaning and language!!!");
                 return;
             }
             _context.Database.EnsureCreated();
@@ -37,6 +29,7 @@ namespace wordz.src.Repository
 
         public IEnumerable<Word> GetAll()
         {
+            
             return _context.Set<Word>().ToList();
         }
 

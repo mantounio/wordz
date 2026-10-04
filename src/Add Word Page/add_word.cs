@@ -62,18 +62,7 @@ namespace wordz.src.add_word
             }
 
             if (err)
-            {
-                 // make this 3 line of code a single method
-                foreach (var control in Util.arr_controls)
-                {
-                    control.BackColor = Color.FromArgb(230, 0, 0);
-                }
-                Util.isErrorPageVisible = true;
-
-                Util.CreatePage(ERROR, Util.control_container);
-
-                Util.set_error($"Can't add the word \n{msg}");
-            }
+                Util.show_error($"Can't add the word \n{msg}");
 
             return err;
         }
@@ -83,7 +72,6 @@ namespace wordz.src.add_word
             combo_lang.Items.AddRange(Util.language_items.ToArray());
             combo_lang.SelectedIndex = 0;
         }
-        // events
 
         private void button3_Click(object sender, EventArgs e) => Util.Page_BackWard();
 
