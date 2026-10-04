@@ -27,7 +27,6 @@ namespace wordz.src.Main_Page
             {
                 // do nothing for now
             }
-
         }
 
         // main events
@@ -37,13 +36,13 @@ namespace wordz.src.Main_Page
         }
         public event EventHandler dohandle;
         private void btn_addword_Click(object sender, EventArgs e) =>
-
             Util.CreatePage(ADDWORD, Util.control_container);
 
         private void btn_takequiz_Click(object sender, EventArgs e)
         {
             if (!Util.isTableCreated())
-                Util.show_error("You need at least 1 word to take a quiz. Add a word to your list and try again!");
+                Util.show_error("You need at least 1 word to take a quiz. Add a word to your list and try again!",true);
+
             else
             {
 
@@ -53,19 +52,9 @@ namespace wordz.src.Main_Page
         private void btn_wordslist_Click(object sender, EventArgs e)
         {
             if (!Util.isTableCreated())
-            {
-                foreach (var control in Util.arr_controls)
-                {
-                    control.BackColor = Color.FromArgb(230, 0, 0);
-                }
-                Util.isErrorPageVisible = true;
-                Util.CreatePage(ERROR, Util.control_container);
-                Util.set_error("You need at least 1 word to take a quiz. Add a word to your list and try again!");
-            }
+                Util.show_error("You need at least one word to view the words list. Please add a word and try again!", true);
             else
-            {
                 Util.CreatePage(WORDSLIST, Util.control_container);
-            }
         }
     }
 }

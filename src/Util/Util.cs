@@ -1,4 +1,5 @@
-﻿using wordz.src.add_word;
+﻿using System.Runtime.CompilerServices;
+using wordz.src.add_word;
 using wordz.src.dbContext;
 using wordz.src.Error_page;
 using wordz.src.Main_Page;
@@ -26,7 +27,10 @@ public static class Util
     public static bool isErrorPageVisible = false;
     public static Control[] arr_controls;
     public static Label error_lbl;
+    public static Label redirection_lbl;
     public static bool show_label;
+
+    
     public static List<string> language_items // change this later to have languages and custom collection
     {
         get
@@ -119,18 +123,21 @@ public static class Util
 
     public static void set_error(string message) => error_lbl.Text = message;
 
-    public static void show_error(string msg)
+    public static void show_error(string msg,bool show_redirection_lbl)
     {
         foreach (var control in arr_controls)
         {
             control.BackColor = Color.FromArgb(230, 0, 0);
         }
+
         isErrorPageVisible = true;
 
         CreatePage(ERROR, control_container);
-        
+       
         set_error(msg);
+        redirection_lbl.Visible = show_redirection_lbl;
     }
+
 
     
 }

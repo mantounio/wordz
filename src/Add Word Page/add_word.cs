@@ -62,7 +62,7 @@ namespace wordz.src.add_word
             }
 
             if (err)
-                Util.show_error($"Can't add the word \n{msg}");
+                Util.show_error($"Can't add the word \n{msg}",false);
 
             return err;
         }

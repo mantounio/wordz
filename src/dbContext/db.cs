@@ -14,7 +14,7 @@ namespace wordz.src.dbContext
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Word>()
-                 .HasIndex(i => new {i.Id,i._Word,i.Meaning,})
+                 .HasIndex(i => new {i.Id,i._Word})
                  .IsUnique();
         }
 

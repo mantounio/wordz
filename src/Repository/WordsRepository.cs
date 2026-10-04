@@ -11,12 +11,12 @@ namespace wordz.src.Repository
 
         public async void Add(Word word)
         {
-            if (await _context.Set<Word>().AnyAsync(i => i._Word == word._Word && i.Meaning == word.Meaning && i.Lang == word.Lang))
+            _context.Database.EnsureCreated();
+            if (await _context.Set<Word>().AnyAsync(i => i._Word == word._Word))
             {
-                Util.show_error("This word already exists with the same meaning and language!!!");
+                Util.show_error("This word already exists with the same meaning and language!!!",false);
                 return;
             }
-            _context.Database.EnsureCreated();
             await _context.Set<Word>().AddAsync(word);
             await _context.SaveChangesAsync();
         }
