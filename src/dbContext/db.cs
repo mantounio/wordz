@@ -16,7 +16,6 @@ namespace wordz.src.dbContext
             modelBuilder.Entity<Word>()
                  .HasIndex(i => new {i.Id,i._Word,i.Meaning,})
                  .IsUnique();
-            
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

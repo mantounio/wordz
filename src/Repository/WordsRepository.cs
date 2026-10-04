@@ -10,7 +10,11 @@ namespace wordz.src.Repository
         public WordsRepository(DbContext context) => _context = context;
 
         public async void Add(Word word)
-        {
+        { 
+           /* if(await _context.Set<Word>().AnyAsync(i => i.Id == word.Id || i._Word == word._Word || i.Meaning == word.Meaning))
+            {
+
+            }*/
             _context.Database.EnsureCreated();
             await _context.Set<Word>().AddAsync(word);
             await _context.SaveChangesAsync();

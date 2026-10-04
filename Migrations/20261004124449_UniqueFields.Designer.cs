@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using wordz.src.dbContext;
 
@@ -10,9 +11,11 @@ using wordz.src.dbContext;
 namespace wordz.Migrations
 {
     [DbContext(typeof(db))]
-    partial class dbModelSnapshot : ModelSnapshot
+    [Migration("20261004124449_UniqueFields")]
+    partial class UniqueFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.12");
