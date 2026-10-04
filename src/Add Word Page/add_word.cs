@@ -63,6 +63,7 @@ namespace wordz.src.add_word
 
             if (err)
             {
+                 // make this 3 line of code a single method
                 foreach (var control in Util.arr_controls)
                 {
                     control.BackColor = Color.FromArgb(230, 0, 0);
