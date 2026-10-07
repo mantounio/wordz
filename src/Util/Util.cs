@@ -13,6 +13,7 @@ public enum Page_OPT
     ADDWORD,
     WORDSLIST,
     SETTING,
+    CHOOSE_LANG,
     ERROR,
 }
 
