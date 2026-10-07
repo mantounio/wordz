@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using wordz.src;
 using wordz.src.add_word;
 using wordz.src.dbContext;
 using wordz.src.Error_page;
@@ -104,6 +105,13 @@ public static class Util
                 {
                     Dock = DockStyle.Fill,
                     Name = "wordslist"
+                };
+                break;
+            case CHOOSE_LANG:
+                page = new ChooseLanguage()
+                {
+                    Dock = DockStyle.Fill,
+                    Name = "chooselanguage"
                 };
                 break;
         }

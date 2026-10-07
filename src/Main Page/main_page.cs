@@ -44,9 +44,7 @@ namespace wordz.src.Main_Page
                 Util.show_error("You need at least 1 word to take a quiz. Add a word to your list and try again!",true);
 
             else
-            {
-                Util.createpage
-            }
+                Util.CreatePage(Page_OPT.CHOOSE_LANG, Util.control_container);
         }
 
         private void btn_wordslist_Click(object sender, EventArgs e)

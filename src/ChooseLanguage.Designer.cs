@@ -32,6 +32,7 @@
             combo_choose_lang = new MaterialSkin.Controls.MaterialComboBox();
             lbl_title = new Label();
             btn_start = new Button();
+            btn_back = new Button();
             SuspendLayout();
             // 
             // lbl_choose_lang
@@ -87,10 +88,23 @@
             btn_start.Text = "Start Quiz";
             btn_start.UseVisualStyleBackColor = true;
             // 
+            // btn_back
+            // 
+            btn_back.FlatStyle = FlatStyle.Flat;
+            btn_back.ForeColor = SystemColors.Control;
+            btn_back.Image = Properties.Resources.back_50px;
+            btn_back.Location = new Point(25, 60);
+            btn_back.Name = "btn_back";
+            btn_back.Size = new Size(69, 52);
+            btn_back.TabIndex = 4;
+            btn_back.UseVisualStyleBackColor = true;
+            btn_back.Click += btn_back_Click;
+            // 
             // ChooseLanguage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btn_back);
             Controls.Add(btn_start);
             Controls.Add(lbl_title);
             Controls.Add(combo_choose_lang);
@@ -107,5 +121,6 @@
         private MaterialSkin.Controls.MaterialComboBox combo_choose_lang;
         private Label lbl_title;
         private Button btn_start;
+        private Button btn_back;
     }
 }
