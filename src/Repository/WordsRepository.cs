@@ -21,6 +21,11 @@ namespace wordz.src.Repository
             await _context.SaveChangesAsync();
         }
 
+        public int count()
+        {
+            return _context.Set<Word>().Count();
+        }
+
         public void Delete(Word word)
         {
             _context.Set<Word>().Remove(word);

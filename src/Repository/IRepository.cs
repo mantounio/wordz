@@ -9,5 +9,6 @@ namespace wordz.src.Repository
         void Add(Word word);
         void Update(Word word);
         void Delete(Word word);
+        int count();
     }
 }

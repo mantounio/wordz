@@ -4,6 +4,9 @@ using wordz.src.add_word;
 using wordz.src.dbContext;
 using wordz.src.Error_page;
 using wordz.src.Main_Page;
+using wordz.src.Repository;
+using wordz.src.words;
+using wordz.src.WordService;
 using wordz.src.WordsList;
 using static Page_OPT;
 
@@ -31,6 +34,7 @@ public static class Util
     public static Label error_lbl;
     public static Label redirection_lbl;
     public static bool show_label;
+    public static Queue<Word> words_processing_queue;
 
     
     public static List<string> language_items // change this later to have languages and custom collection
@@ -145,6 +149,26 @@ public static class Util
        
         set_error(msg);
         redirection_lbl.Visible = show_redirection_lbl;
+    }
+
+    internal static void gen_quiz_queue(IRepository repo)
+    {
+        if(repo.count() == 0)
+        {
+            throw new Exception("can't run quiz");
+        }
+
+        Queue<Word> word_queue = new();
+        for (int i = 0; i < 10; ++i)
+        {
+            word_queue.Enqueue(get_random_entity(repo));
+        }
+    }
+    internal static Word get_random_entity(IRepository repo)
+    {
+        Random rand = new Random();
+        var skip_num = (int)(rand.NextDouble() * repo.count());
+        return repo.GetAll().OrderBy(o => o.Id).Skip(skip_num).Take(1).First();
     }
 
 

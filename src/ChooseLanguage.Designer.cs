@@ -81,12 +81,13 @@
             // 
             btn_start.FlatStyle = FlatStyle.Flat;
             btn_start.Font = new Font("Tahoma", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_start.Location = new Point(343, 439);
+            btn_start.Location = new Point(334, 439);
             btn_start.Name = "btn_start";
             btn_start.Size = new Size(313, 72);
             btn_start.TabIndex = 3;
             btn_start.Text = "Start Quiz";
             btn_start.UseVisualStyleBackColor = true;
+            btn_start.Click += btn_start_Click;
             // 
             // btn_back
             // 
