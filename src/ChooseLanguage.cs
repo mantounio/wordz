@@ -1,5 +1,7 @@
 ﻿// make this UI 
 using System.Diagnostics;
+using wordz.src.Repository;
+using wordz.src.WordService;
 
 namespace wordz.src
 {
@@ -22,11 +24,16 @@ namespace wordz.src
             if(combo_choose_lang.SelectedIndex == 0)
             {
                 Util.show_error("Please select a language to take the quiz!"
-                    , false);
+                    ,false);
             }
             else
+            {
+                IRepository repo = new WordsRepository(Util.db);
+                //WordService.WordService service = new(repo);
+
+                Util.gen_quiz_queue(repo);
                 Util.CreatePage(Page_OPT.TAKEQUIZ, Util.control_container);
+            }
         }
-         
     }
 }

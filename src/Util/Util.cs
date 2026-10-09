@@ -1,12 +1,10 @@
-﻿using System.Runtime.CompilerServices;
-using wordz.src;
+﻿using wordz.src;
 using wordz.src.add_word;
 using wordz.src.dbContext;
 using wordz.src.Error_page;
 using wordz.src.Main_Page;
 using wordz.src.Repository;
 using wordz.src.words;
-using wordz.src.WordService;
 using wordz.src.WordsList;
 using static Page_OPT;
 
@@ -28,15 +26,16 @@ public static class Util
     public static string current_dir = Environment.CurrentDirectory;
     public static string table_name = "word.db";
     public static string fullpath = Path.Combine(current_dir, table_name);
-    public static db db = new();
+    public static db db = new(); // change it later to use dbcontextfactory for the optimizing the lifetime
     public static bool isErrorPageVisible = false;
     public static Control[] arr_controls;
     public static Label error_lbl;
     public static Label redirection_lbl;
     public static bool show_label;
-    public static Queue<Word> words_processing_queue;
-
+    public static Queue<Word> word_queue = new();
     
+
+
     public static List<string> language_items // change this later to have languages and custom collection
     {
         get
@@ -45,7 +44,6 @@ public static class Util
         }
     }
 
-    
     // methods
     public static void Push_window(UserControl usercontrol) => WINDPTR.Push(usercontrol);
     public static UserControl Get_window() => WINDPTR.Peek();
@@ -118,6 +116,13 @@ public static class Util
                     Name = "chooselanguage"
                 };
                 break;
+            case TAKEQUIZ:
+                page = new TakeQuizPage()
+                {
+                    Dock = DockStyle.Fill,
+                    Name = "takequiz"
+                };
+                break;
         }
         Push_window(page);
         page.SendToBack();
@@ -153,22 +158,29 @@ public static class Util
 
     internal static void gen_quiz_queue(IRepository repo)
     {
-        if(repo.count() == 0)
-        {
-            throw new Exception("can't run quiz");
-        }
-
-        Queue<Word> word_queue = new();
         for (int i = 0; i < 10; ++i)
         {
             word_queue.Enqueue(get_random_entity(repo));
         }
     }
-    internal static Word get_random_entity(IRepository repo)
+    internal static Word get_random_entity(IRepository repo,string lang)
     {
         Random rand = new Random();
         var skip_num = (int)(rand.NextDouble() * repo.count());
-        return repo.GetAll().OrderBy(o => o.Id).Skip(skip_num).Take(1).First();
+        return repo.GetAll().Where(l => l.Lang == Enum.Parse<Langs>(lang))
+            .OrderBy(o => o.Id)
+            .Skip(skip_num)
+            .Take(1)
+            .First();
+    }
+
+    internal static void next_word(IRepository repo = null!)
+    {
+        word_queue.Dequeue();
+
+        if(word_queue.Count == 0)
+            gen_quiz_queue(repo);
+
     }
 
 
