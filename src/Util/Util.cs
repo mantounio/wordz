@@ -5,6 +5,7 @@ using wordz.src.Error_page;
 using wordz.src.Main_Page;
 using wordz.src.Repository;
 using wordz.src.words;
+using wordz.src.WordService;
 using wordz.src.WordsList;
 using static Page_OPT;
 
@@ -33,9 +34,19 @@ public static class Util
     public static Label redirection_lbl;
     public static bool show_label;
     public static Queue<Word> word_queue = new();
+
+    #region remove_this_later(refactor this with dbcontextfacotry) later
+
+    internal static IRepository repo = new WordsRepository(db);
+    public static WordService service = new(repo);
+
+    #endregion
+
+   /* static Util() put the initilizers in the static ctor
+    {
+
+    }*/
     
-
-
     public static List<string> language_items // change this later to have languages and custom collection
     {
         get
@@ -156,34 +167,33 @@ public static class Util
         redirection_lbl.Visible = show_redirection_lbl;
     }
 
-    internal static void gen_quiz_queue(IRepository repo)
+    internal static void gen_quiz_queue(WordService service,string lang)
     {
         for (int i = 0; i < 10; ++i)
         {
-            word_queue.Enqueue(get_random_entity(repo));
+            word_queue.Enqueue(get_random_entity(service,lang));
         }
     }
-    internal static Word get_random_entity(IRepository repo,string lang)
+    internal static Word get_random_entity(WordService service,string lang)
     {
-        Random rand = new Random();
-        var skip_num = (int)(rand.NextDouble() * repo.count());
-        return repo.GetAll().Where(l => l.Lang == Enum.Parse<Langs>(lang))
-            .OrderBy(o => o.Id)
-            .Skip(skip_num)
-            .Take(1)
-            .First();
+        Random random = new();
+
+        int rand_id = random.Next(1, service.count());
+
+        MessageBox.Show(rand_id.ToString());
+
+        return db.words.Where(i => i.Id == rand_id).First(); //service.GetWordById(rand_id);
     }
 
-    internal static void next_word(IRepository repo = null!)
+    internal static void next_word(WordService service,string lang)
     {
         word_queue.Dequeue();
 
-        if(word_queue.Count == 0)
-            gen_quiz_queue(repo);
-
+        if (word_queue.Count == 0)
+        {
+            MessageBox.Show("Test");
+            gen_quiz_queue(service, lang);
+        } 
     }
-
-
-    
 }
 

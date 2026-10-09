@@ -1,6 +1,4 @@
-﻿
-
-namespace wordz.src
+﻿namespace wordz.src
 {
     public partial class TakeQuizPage : UserControl
     {
@@ -11,12 +9,11 @@ namespace wordz.src
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int queue_count = Util.word_queue.Count;
+            int count = Util.word_queue.Count;
+            MessageBox.Show(count.ToString());
 
             label1.Text = Util.word_queue.Peek()._Word;
-            Util.word_queue.Dequeue();
-
-            if()
+            Util.next_word(Util.service,"ENGLISH");
         }
     }
 }

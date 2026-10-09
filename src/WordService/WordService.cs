@@ -15,7 +15,7 @@ namespace wordz.src.WordService
         public IEnumerable<Word> GetAllWords() => _repository.GetAll();
         public void CreateWord(Word word) => _repository.Add(word);
         public void UpdateWord(Word word) => _repository.Update(word);
-        public void GetWordById(int id) => _repository.GetById(id);
+        public Word GetWordById(int id) => _repository.GetById(id);
         public void DeleteWord(int id)
         {
             var word = _repository.GetById(id);
@@ -24,5 +24,7 @@ namespace wordz.src.WordService
                 _repository.Delete(word);
             }
         }
+
+        public int count() => _repository.count();
     }
 }

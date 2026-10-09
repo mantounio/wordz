@@ -29,9 +29,11 @@ namespace wordz.src
             else
             {
                 IRepository repo = new WordsRepository(Util.db);
-                //WordService.WordService service = new(repo);
+                WordService.WordService service = new(repo);
 
-                Util.gen_quiz_queue(repo);
+
+                MessageBox.Show(combo_choose_lang.SelectedItem.ToString());
+                Util.gen_quiz_queue(service,combo_choose_lang.SelectedItem!.ToString()!);
                 Util.CreatePage(Page_OPT.TAKEQUIZ, Util.control_container);
             }
         }
