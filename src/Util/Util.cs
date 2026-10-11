@@ -5,7 +5,7 @@ using wordz.src.Error_page;
 using wordz.src.Main_Page;
 using wordz.src.Repository;
 using wordz.src.words;
-using wordz.src.WordService;
+using wordz.src.service;
 using wordz.src.WordsList;
 using static Page_OPT;
 
@@ -33,7 +33,6 @@ public static class Util
     public static Label error_lbl;
     public static Label redirection_lbl;
     public static bool show_label;
-    public static Queue<Word> word_queue = new();
 
     #region remove_this_later(refactor this with dbcontextfacotry) later
 
@@ -165,35 +164,6 @@ public static class Util
        
         set_error(msg);
         redirection_lbl.Visible = show_redirection_lbl;
-    }
-
-    internal static void gen_quiz_queue(WordService service,string lang)
-    {
-        for (int i = 0; i < 10; ++i)
-        {
-            word_queue.Enqueue(get_random_entity(service,lang));
-        }
-    }
-    internal static Word get_random_entity(WordService service,string lang)
-    {
-        Random random = new();
-
-        int rand_id = random.Next(1, service.count());
-
-        MessageBox.Show(rand_id.ToString());
-
-        return db.words.Where(i => i.Id == rand_id).First(); //service.GetWordById(rand_id);
-    }
-
-    internal static void next_word(WordService service,string lang)
-    {
-        word_queue.Dequeue();
-
-        if (word_queue.Count == 0)
-        {
-            MessageBox.Show("Test");
-            gen_quiz_queue(service, lang);
-        } 
     }
 }
 

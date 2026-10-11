@@ -1,5 +1,6 @@
 ﻿using wordz.src.Repository;
 using wordz.src.words;
+using wordz.src.service;
 using static Page_OPT;
 using static Langs;
 
@@ -78,7 +79,7 @@ namespace wordz.src.add_word
         private void materialButton1_Click(object sender, EventArgs e)
         {
             IRepository repository = new WordsRepository(Util.db);
-            WordService.WordService service = new(repository);
+            WordService service = new(repository);
 
             Word word = new()
             {

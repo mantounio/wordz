@@ -1,7 +1,8 @@
 ﻿// make this UI 
 using System.Diagnostics;
+using wordz.src.Quiz;
 using wordz.src.Repository;
-using wordz.src.WordService;
+using wordz.src.service;
 
 namespace wordz.src
 {
@@ -29,12 +30,17 @@ namespace wordz.src
             else
             {
                 IRepository repo = new WordsRepository(Util.db);
-                WordService.WordService service = new(repo);
+                WordService service = new(repo);
 
 
-                MessageBox.Show(combo_choose_lang.SelectedItem.ToString());
-                Util.gen_quiz_queue(service,combo_choose_lang.SelectedItem!.ToString()!);
+              /*  MessageBox.Show(combo_choose_lang.SelectedItem.ToString());
+                //Util.gen_quiz_queue(service,combo_choose_lang.SelectedItem!.ToString()!);
                 Util.CreatePage(Page_OPT.TAKEQUIZ, Util.control_container);
+                //QuizSession.init_quiz(QuizSession.gen_quiz_queue(service, "ENGLISH"),null,0);*/
+
+
+
+
             }
         }
     }
