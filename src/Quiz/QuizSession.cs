@@ -53,14 +53,14 @@ namespace wordz.src.Quiz
 
         public static void gen_question(WordService service) // change later this 
         {
-            var whole_word = get_random_item(service, "word");
+            var whole_word = get_random_word_and_meaning(service);
             MessageBox.Show(whole_word.word + " : " + whole_word.meaning);
         }
-        public static (string word,string meaning) get_random_item(WordService service,string which)
+        public static (string word,string meaning) get_random_word_and_meaning(WordService service)
         {            
             Random rand = new();
 
-            int rand_id = rand.Next(1, service.count());
+            int rand_id = rand.Next(1, service.count() + 1);
 
             if(old_num == rand_id)
             {
@@ -72,6 +72,11 @@ namespace wordz.src.Quiz
             return (service.GetAllWords()
                .Where(i => i.Id == rand_id).First()._Word, service.GetAllWords()
                .Where(i => i.Id == rand_id).First().Meaning);
+        }
+
+        public static string get_random_options(WordService service,string meaning)
+        {
+            return "";
         }
     }
 
