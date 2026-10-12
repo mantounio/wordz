@@ -32,15 +32,7 @@ namespace wordz.src
                 IRepository repo = new WordsRepository(Util.db);
                 WordService service = new(repo);
 
-
-              /*  MessageBox.Show(combo_choose_lang.SelectedItem.ToString());
-                //Util.gen_quiz_queue(service,combo_choose_lang.SelectedItem!.ToString()!);
-                Util.CreatePage(Page_OPT.TAKEQUIZ, Util.control_container);
-                //QuizSession.init_quiz(QuizSession.gen_quiz_queue(service, "ENGLISH"),null,0);*/
-
-
-
-
+                QuizSession.gen_question(service);
             }
         }
     }
