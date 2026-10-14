@@ -28,35 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            label1 = new Label();
+            lbl_word = new Label();
+            b1 = new Button();
+            b2 = new Button();
+            b3 = new Button();
+            b4 = new Button();
             SuspendLayout();
             // 
-            // button1
+            // lbl_word
             // 
-            button1.Location = new Point(219, 270);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "gen word";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            lbl_word.AutoSize = true;
+            lbl_word.Location = new Point(465, 152);
+            lbl_word.Name = "lbl_word";
+            lbl_word.Size = new Size(50, 20);
+            lbl_word.TabIndex = 0;
+            lbl_word.Text = "label1";
             // 
-            // label1
+            // b1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(456, 277);
-            label1.Name = "label1";
-            label1.Size = new Size(90, 20);
-            label1.TabIndex = 1;
-            label1.Text = "words name";
+            b1.Location = new Point(290, 299);
+            b1.Name = "b1";
+            b1.Size = new Size(165, 130);
+            b1.TabIndex = 1;
+            b1.Text = "button1";
+            b1.UseVisualStyleBackColor = true;
+            b1.Click += b1_Click;
+            // 
+            // b2
+            // 
+            b2.Location = new Point(526, 299);
+            b2.Name = "b2";
+            b2.Size = new Size(165, 130);
+            b2.TabIndex = 2;
+            b2.Text = "button2";
+            b2.UseVisualStyleBackColor = true;
+            b2.Click += b2_Click;
+            // 
+            // b3
+            // 
+            b3.Location = new Point(290, 489);
+            b3.Name = "b3";
+            b3.Size = new Size(165, 130);
+            b3.TabIndex = 3;
+            b3.Text = "button3";
+            b3.UseVisualStyleBackColor = true;
+            // 
+            // b4
+            // 
+            b4.Location = new Point(526, 489);
+            b4.Name = "b4";
+            b4.Size = new Size(165, 130);
+            b4.TabIndex = 4;
+            b4.Text = "button4";
+            b4.UseVisualStyleBackColor = true;
             // 
             // TakeQuizPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(b4);
+            Controls.Add(b3);
+            Controls.Add(b2);
+            Controls.Add(b1);
+            Controls.Add(lbl_word);
             Name = "TakeQuizPage";
             Size = new Size(980, 681);
             ResumeLayout(false);
@@ -65,7 +99,10 @@
 
         #endregion
 
-        private Button button1;
-        private Label label1;
+        private Label lbl_word;
+        private Button b1;
+        private Button b2;
+        private Button b3;
+        private Button b4;
     }
 }

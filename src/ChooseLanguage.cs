@@ -33,6 +33,8 @@ namespace wordz.src
                 WordService service = new(repo);
 
                 QuizSession.gen_question(service);
+
+                Util.CreatePage(Page_OPT.TAKEQUIZ, Util.control_container);
             }
         }
     }

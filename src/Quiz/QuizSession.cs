@@ -1,5 +1,8 @@
-﻿using wordz.src.service;
+﻿using Microsoft.Extensions.Options;
+using System.Security.Cryptography;
+using wordz.src.service;
 using wordz.src.words;
+using static System.Windows.Forms.Design.AxImporter;
 
 namespace wordz.src.Quiz
 {
@@ -54,7 +57,7 @@ namespace wordz.src.Quiz
         public static void gen_question(WordService service) // change later this 
         {
             var whole_word = get_random_word_and_meaning(service);
-            MessageBox.Show(whole_word.word + " : " + whole_word.meaning);
+            init_quiz(service);
         }
         public static (string word,string meaning) get_random_word_and_meaning(WordService service)
         {            
@@ -74,10 +77,65 @@ namespace wordz.src.Quiz
                .Where(i => i.Id == rand_id).First().Meaning);
         }
 
-        public static string get_random_options(WordService service,string meaning)
+        public static List<string> get_random_options(WordService service,string meaning)
         {
-            return "";
+            List<string> options = new();
+
+            for (int i = 0; i < 3; i++)
+            {
+                string option_meaning = get_random_word_and_meaning(service).meaning;
+                if(option_meaning == meaning)
+                {
+                    while(option_meaning != meaning)
+                    {
+                        option_meaning = get_random_word_and_meaning(service).meaning;
+                    }
+                }
+
+                options.Add(option_meaning);
+            }
+            options.Add(meaning);
+
+            return options;
         }
+
+        public static void init_quiz(WordService service)
+        {
+
+            List<string> options = new();
+
+            if(questions.Count == 0)
+            {
+                for (int i = 0; i < 10; ++i)
+                {
+                    var whole_word = get_random_word_and_meaning(service);
+                    options = get_random_options(service, whole_word.meaning);
+                    questions!.Enqueue(new QuizQuestion()
+                    {
+                        question_word = whole_word.word,
+                        options = options
+                    });
+                    //MessageBox.Show(whole_word.word,"10 time loop word");
+                }
+            }
+
+            foreach(var item in options)
+            {
+                Console.WriteLine(item,"items in options");
+            }
+
+        }
+
+        /*public QuizQuestion gen_question_quiz(WordService service,(string meaning,string word)word_q,List<string>options)
+        {
+            if(questions.Count == 0)
+            {
+                for (int i = 0; i < 10; ++i)
+                {
+                    
+                }
+            }
+        }*/
     }
 
 }
