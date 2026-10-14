@@ -32,7 +32,8 @@ namespace wordz.src
                 IRepository repo = new WordsRepository(Util.db);
                 WordService service = new(repo);
 
-                QuizSession.gen_question(service);
+                QuizSession.set_service(service);
+                QuizSession.gen_question();
 
                 Util.CreatePage(Page_OPT.TAKEQUIZ, Util.control_container);
             }
