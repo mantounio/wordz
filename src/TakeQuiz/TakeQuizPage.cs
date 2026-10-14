@@ -28,7 +28,6 @@ namespace wordz.src
         {
             QuizSession.questions.Dequeue();
             lbl_word.Text = QuizSession.questions.Peek().question_word;
-
         }
 
         private void b2_Click(object sender, EventArgs e)
