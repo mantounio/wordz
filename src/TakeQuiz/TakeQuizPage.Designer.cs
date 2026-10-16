@@ -38,7 +38,7 @@
             // lbl_word
             // 
             lbl_word.AutoSize = true;
-            lbl_word.Location = new Point(465, 152);
+            lbl_word.Location = new Point(465, 127);
             lbl_word.Name = "lbl_word";
             lbl_word.Size = new Size(50, 20);
             lbl_word.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // b1
             // 
-            b1.Location = new Point(290, 299);
+            b1.Location = new Point(290, 196);
             b1.Name = "b1";
             b1.Size = new Size(165, 130);
             b1.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // b2
             // 
-            b2.Location = new Point(526, 299);
+            b2.Location = new Point(526, 196);
             b2.Name = "b2";
             b2.Size = new Size(165, 130);
             b2.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             // b3
             // 
-            b3.Location = new Point(290, 489);
+            b3.Location = new Point(290, 386);
             b3.Name = "b3";
             b3.Size = new Size(165, 130);
             b3.TabIndex = 3;
@@ -75,7 +75,7 @@
             // 
             // b4
             // 
-            b4.Location = new Point(526, 489);
+            b4.Location = new Point(526, 386);
             b4.Name = "b4";
             b4.Size = new Size(165, 130);
             b4.TabIndex = 4;

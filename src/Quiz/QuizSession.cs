@@ -13,7 +13,7 @@ namespace wordz.src.Quiz
         private static int old_num;
 
         public static void gen_question() => init_quiz();// change later this
-        public static (string word, string meaning) get_random_word_and_meaning(WordService service)
+        private static (string word, string meaning) get_random_word_and_meaning(WordService service)
         {
             Random rand = new();
 
@@ -31,7 +31,7 @@ namespace wordz.src.Quiz
                .Where(i => i.Id == rand_id).First().Meaning);
         }
 
-        public static List<string> get_random_options(string meaning)
+        private static List<string> get_random_options(string meaning)
         {
             List<string> options = new();
 

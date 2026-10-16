@@ -15,7 +15,6 @@ namespace wordz.src
             combo_choose_lang.Items.AddRange(Util.language_items.ToArray());
             combo_choose_lang.SelectedIndex = 0;
         }
-
         
         // events
         private void btn_back_Click(object sender, EventArgs e) => Util.Page_BackWard();
