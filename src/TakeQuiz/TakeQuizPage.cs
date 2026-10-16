@@ -13,7 +13,11 @@ namespace wordz.src
 
             for (int i = 0; i < 4; i++)
             {
-                Controls[get_random_btn().Name!].Text = QuizSession.questions.Peek().question_word;
+               foreach(var item in QuizSession.questions.Peek().options)
+               {
+                    Controls[get_random_btn().Name!].Text = item;
+                    QuizSession.next();
+               }
             }
         }
 
