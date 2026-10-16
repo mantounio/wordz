@@ -9,11 +9,12 @@ namespace wordz.src
         public TakeQuizPage()
         {
             InitializeComponent();
-            lbl_word.Text = QuizSession.questions.First().question_word;
+            var quiz = QuizSession.questions;
+            lbl_word.Text = quiz.Peek().question_word;
 
             for (int i = 0; i < 4; i++)
             {
-               foreach(var item in QuizSession.questions.Peek().options)
+               foreach(var item in quiz.Peek().options)
                {
                     Controls[get_random_btn().Name!].Text = item;
                     QuizSession.next();
@@ -23,14 +24,12 @@ namespace wordz.src
 
         private void button1_Click(object sender, EventArgs e)
         {
-            QuizSession.questions.Dequeue();
-            lbl_word.Text = QuizSession.questions.Peek().question_word;
+          
         }
 
         private void b1_Click(object sender, EventArgs e)
         {
-            QuizSession.next();
-            lbl_word.Text = QuizSession.questions.Peek().question_word;
+          
         }
 
         private void b2_Click(object sender, EventArgs e)
